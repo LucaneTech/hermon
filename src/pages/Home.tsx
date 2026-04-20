@@ -1,0 +1,289 @@
+import { motion } from 'framer-motion'
+import { ArrowRight, Shield, Clock, Star, ChevronDown } from 'lucide-react'
+import { NavLink } from 'react-router-dom'
+import PageTransition from '../components/PageTransition'
+import SectionReveal from '../components/SectionReveal'
+import { useTheme } from '../hooks/useTheme'
+
+const values = [
+  { icon: Shield, label: 'Confidentialité Absolue', desc: 'Clause renforcée dans chaque contrat. Vos secrets restent vôtres.' },
+  { icon: Clock, label: 'Disponibilité 24/7/365', desc: 'Nos clients sont prioritaires à chaque instant, sans exception.' },
+  { icon: Star, label: 'Exigence Irréprochable', desc: 'Nous ne proposons que l\'excellence. Aucun compromis, jamais.' },
+]
+const stats = [
+  { number: '24/7', label: 'Disponibilité permanente' },
+  { number: '5', label: 'Piliers de services' },
+  { number: '3', label: 'Catégories sur-mesure' },
+  { number: '1h', label: 'Réactivité d\'urgence' },
+];
+
+const pillars = [
+  { num: '01', title: 'Excellence Événementielle', tag: 'L\'art de recevoir dignement' },
+  { num: '02', title: 'Mobilité Intelligente', tag: 'Voyager sans jamais être déplacé' },
+  { num: '03', title: 'Fiabilité Totale', tag: 'Des partenaires dignes de confiance' },
+  { num: '04', title: 'Réactivité Absolue', tag: 'L\'administration au service de l\'action' },
+  { num: '05', title: 'Sur-Mesure Personnel', tag: 'Le dirigeant d\'abord, la personne ensuite' },
+];
+
+export default function Home() {
+  const { isDark } = useTheme()
+
+  return (
+    <PageTransition>
+      {/* ═══ HERO ═══ */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 pb-4 md:pt-28 md:pb-8">
+        {/* Background */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `linear-gradient(rgba(10,10,10,0.75), rgba(10,10,10,0.85)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1920')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+
+        {/* Glows */}
+        <div className="hero-glow" style={{ width: '600px', height: '600px', background: 'rgba(75,0,130,0.15)', top: '20%', left: '10%' }} />
+        <div className="hero-glow" style={{ width: '400px', height: '400px', background: 'rgba(197,160,89,0.08)', top: '50%', right: '15%' }} />
+
+        {/* Content */}
+        <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+          >
+            <p className="section-label mb-8">Conciergerie Multi-Domaine Premium</p>
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="font-display mb-8"
+            style={{ fontSize: 'clamp(3rem, 8vw, 7rem)', fontWeight: 300, lineHeight: 1.05 }}
+          >
+            L'Art de<br />
+            <em style={{ color: '#C5A059', fontStyle: 'italic' }}>Libérer le Temps</em><br />
+            des Leaders
+          </motion.h1>
+
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ delay: 0.9, duration: 0.6 }}
+            className="mx-auto mb-8 h-px max-w-xs"
+            style={{ background: 'linear-gradient(90deg, transparent, #C5A059, transparent)' }}
+          />
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.0, duration: 0.8 }}
+            className="font-body text-lg mx-auto mb-12 leading-relaxed"
+            style={{ color: 'rgba(240,237,232,0.65)', maxWidth: '580px' }}
+          >
+            HERMON EXIMIA prend en charge tout ce qui vous empêche de décider. 
+            Vous arrivez, vous présidez, vous repartez. <span style={{ color: '#C5A059' }}>Tout le reste est notre affaire.</span>
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2, duration: 0.6 }}
+            className="flex flex-wrap items-center justify-center gap-4"
+          >
+            <NavLink to="/contact">
+              <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="btn-gold rounded-sm">
+                Diagnostic Gratuit (2h)
+                <ArrowRight size={14} />
+              </motion.button>
+            </NavLink>
+
+            <NavLink to="/services">
+              <motion.button
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className="font-heading text-xs tracking-[0.2em] uppercase py-3 px-8 transition-colors duration-300 animated-link border border-gray-600"
+               
+              >
+                Découvrir nos Services
+              </motion.button>
+            </NavLink>
+          </motion.div>
+        </div>
+
+       
+      </section>
+
+      {/* ═══ STATS BAR ═══ */}
+      <section
+        className="py-12 px-6"
+        style={{
+          background: isDark ? '#0d0d0d' : '#f0ede8',
+          borderTop: '1px solid rgba(197,160,89,0.1)',
+          borderBottom: '1px solid rgba(197,160,89,0.1)',
+        }}
+      >
+        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0">
+          {stats.map((stat, i) => (
+            <SectionReveal key={stat.label} delay={i * 0.1}>
+              <div className={`text-center ${i < 3 ? 'md:border-r' : ''}`} style={{ borderColor: 'rgba(197,160,89,0.1)' }}>
+                <div className="counter-number">{stat.number}</div>
+                <div className="font-heading text-xs tracking-[0.2em] uppercase mt-2" style={{ color: 'var(--text-secondary)' }}>
+                  {stat.label}
+                </div>
+              </div>
+            </SectionReveal>
+          ))}
+        </div>
+      </section>
+
+      {/* ═══ WHAT WE TRULY SELL ═══ */}
+      <section className="py-32 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <SectionReveal direction="left">
+              <p className="section-label mb-4">Notre Philosophie</p>
+              <h2 className="section-title mb-8">
+                Nous ne vendons pas<br />
+                des services.<br />
+                <em>Nous offrons la liberté.</em>
+              </h2>
+              <p className="font-body text-base leading-relaxed mb-8" style={{ color: 'var(--text-secondary)' }}>
+                HERMON EXIMIA est née d'un constat fondamental : l'attention des dirigeants est constamment fragmentée. 
+                Entre sollicitations internes, imprévus logistiques et tâches administratives, le temps consacré à la réflexion 
+                stratégique se réduit dangereusement.
+              </p>
+              <NavLink to="/a-propos">
+                <button className="btn-gold text-xs">
+                  Notre Vision
+                  <ArrowRight size={13} />
+                </button>
+              </NavLink>
+            </SectionReveal>
+
+            <SectionReveal direction="right">
+              <div className="space-y-4">
+                {[
+                  { label: 'La Tranquillité', desc: 'L\'absence totale de préoccupation logistique' },
+                  { label: 'L\'Efficacité', desc: 'Chaque minute réinvestie dans l\'essentiel stratégique' },
+                  { label: 'La Liberté', desc: 'La capacité de se concentrer sans entrave' },
+                  { label: 'La Dignité', desc: 'Un accompagnement discret et irréprochable' },
+                  { label: 'Le Temps', desc: 'La ressource la plus rare et la plus précieuse' },
+                ].map((item, i) => (
+                  <SectionReveal key={item.label} delay={i * 0.1}>
+                    <div className="glass-card p-5 flex items-center gap-5">
+                      <div className="w-8 h-8 rounded-none flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(75,0,130,0.3)', border: '1px solid rgba(197,160,89,0.2)' }}>
+                        <span className="font-heading text-xs" style={{ color: '#C5A059' }}>{String(i + 1).padStart(2, '0')}</span>
+                      </div>
+                      <div>
+                        <div className="font-heading text-sm tracking-widest uppercase mb-1" style={{ color: '#C5A059', fontWeight: 300 }}>{item.label}</div>
+                        <div className="font-body text-sm" style={{ color: 'var(--text-secondary)' }}>{item.desc}</div>
+                      </div>
+                    </div>
+                  </SectionReveal>
+                ))}
+              </div>
+            </SectionReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ PILLARS OVERVIEW ═══ */}
+      <section className="py-24 px-6" style={{ background: isDark ? '#080808' : '#f5f2ee' }}>
+        <div className="max-w-7xl mx-auto">
+          <SectionReveal className="text-center mb-20">
+            <p className="section-label mb-4">Une architecture complète</p>
+            <h2 className="section-title">
+              Les <em>5 Piliers</em> de l'Excellence
+            </h2>
+          </SectionReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+            {pillars.map((pillar, i) => (
+              <SectionReveal key={pillar.num} delay={i * 0.1}>
+                <div className="pillar-card h-full">
+                  <div className="font-heading text-3xl mb-6" style={{ color: 'rgba(197,160,89,0.2)', fontWeight: 200 }}>{pillar.num}</div>
+                  <h3 className="font-heading text-sm tracking-widest uppercase mb-3" style={{ color: 'var(--text-primary)', fontWeight: 300 }}>
+                    {pillar.title}
+                  </h3>
+                  <p className="font-display text-sm italic" style={{ color: 'rgba(197,160,89,0.6)' }}>
+                    {pillar.tag}
+                  </p>
+                </div>
+              </SectionReveal>
+            ))}
+          </div>
+
+          <SectionReveal className="text-center mt-16">
+            <NavLink to="/services">
+              <motion.button whileHover={{ scale: 1.02 }} className="btn-gold">
+                Explorer tous nos Services
+                <ArrowRight size={14} />
+              </motion.button>
+            </NavLink>
+          </SectionReveal>
+        </div>
+      </section>
+
+      {/* ═══ VALUES ═══ */}
+      <section className="py-32 px-6">
+        <div className="max-w-7xl mx-auto">
+          <SectionReveal className="text-center mb-20">
+            <p className="section-label mb-4">Notre Engagement Dignitaire</p>
+            <h2 className="section-title">
+              Principes qui nous<br /><em>définissent</em>
+            </h2>
+          </SectionReveal>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {values.map((v, i) => (
+              <SectionReveal key={v.label} delay={i * 0.15}>
+                <div className="glass-card p-10 text-center h-full">
+                  <div className="inline-flex items-center justify-center w-16 h-16 mb-6" style={{ border: '1px solid rgba(197,160,89,0.3)' }}>
+                    <v.icon size={24} style={{ color: '#C5A059' }} />
+                  </div>
+                  <h3 className="font-heading text-sm tracking-widest uppercase mb-4" style={{ color: '#C5A059', fontWeight: 300 }}>{v.label}</h3>
+                  <p className="font-body text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{v.desc}</p>
+                </div>
+              </SectionReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ KEY MESSAGE ═══ */}
+      <section
+        className="py-32 px-6 relative overflow-hidden"
+        style={{
+          background: isDark
+            ? 'linear-gradient(135deg, rgba(75,0,130,0.15) 0%, rgba(10,10,10,1) 50%, rgba(197,160,89,0.05) 100%)'
+            : 'linear-gradient(135deg, rgba(75,0,130,0.08) 0%, rgba(248,246,242,1) 50%, rgba(197,160,89,0.1) 100%)',
+        }}
+      >
+        <div className="relative z-10 text-center max-w-4xl mx-auto">
+          <SectionReveal>
+            <div className="gold-line justify-center mb-8">
+              <span className="section-label">Message Clé</span>
+            </div>
+            <blockquote
+              className="font-display mb-12"
+              style={{ fontSize: 'clamp(1.8rem, 4vw, 3.5rem)', fontWeight: 300, lineHeight: 1.2, color: 'var(--text-primary)' }}
+            >
+              "EXIMIA S'OCCUPE DE<br />
+              <em style={{ color: '#C5A059' }}>TOUT CE QUI FAIT<br />PERDRE DU TEMPS</em><br />
+              AUX DIRIGEANTS."
+            </blockquote>
+            <div className="divider-gold mx-auto mb-10" />
+            <NavLink to="/contact">
+              <motion.button whileHover={{ scale: 1.02 }} className="btn-gold">
+                Initier votre Transformation
+                <ArrowRight size={14} />
+              </motion.button>
+            </NavLink>
+          </SectionReveal>
+        </div>
+      </section>
+    </PageTransition>
+  )
+}
