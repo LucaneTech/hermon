@@ -10,11 +10,13 @@ import Cibles from './pages/Cibles'
 import Services from './pages/Services'
 import Tarifs from './pages/Tarifs'
 import Contact from './pages/Contact'
+import ScrollToTop from './components/ScrollToTop'
 
 function AppRoutes() {
   const location = useLocation()
   return (
     <AnimatePresence mode="wait" initial={false}>
+       <ScrollToTop />
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/a-propos" element={<About />} />

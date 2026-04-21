@@ -47,6 +47,7 @@ export default function Footer() {
             Libérez votre temps.<br />
             <em style={{ color: '#C5A059' }}>Régnez sur vos priorités.</em>
           </h2>
+          
           <NavLink to="/contact">
             <motion.button
               whileHover={{ scale: 1.02 }}
@@ -57,6 +58,7 @@ export default function Footer() {
               <ArrowUpRight size={14} />
             </motion.button>
           </NavLink>
+
         </div>
       </div>
 
