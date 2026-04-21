@@ -70,7 +70,7 @@ export default function Footer() {
             <motion.img
               src="./images/logo.png"
               alt="Logo Hermon Eximia"
-              className="w-24 sm:w-28 md:w-56 h-auto object-contain"
+              className="h-32 md:h-40 w-auto object-contain"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             />
@@ -80,7 +80,7 @@ export default function Footer() {
               L'art de libérer le temps des leaders et collaborateurs d'exception, en République du Congo et au-delà.
             </p>
             <div className="mt-6 w-12 h-px" style={{ background: '#C5A059' }} />
-            <p className="mt-4 font-display text-xs italic" style={{ color: 'rgba(197,160,89,0.5)' }}>
+            <p className="mt-4 font-display text-sm italic" style={{ color: 'rgba(197,160,89,0.5)' }}>
               « Excellence Discrète »
             </p>
           </div>

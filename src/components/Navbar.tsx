@@ -53,7 +53,7 @@ export default function Navbar() {
                 <motion.img
                   src="./images/logo.png"
                   alt="Logo Hermon Eximia"
-                  className="w-24 sm:w-28 md:w-56 h-auto object-contain"
+                  className="h-32 md:h-40 w-auto object-contain"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 />
@@ -68,11 +68,10 @@ export default function Navbar() {
                   to={item.path}
                   end={item.path === '/'}
                   className={({ isActive }) =>
-                    `animated-link font-heading text-xs tracking-[0.2em] uppercase transition-colors duration-300 ${
-                      isActive
-                        ? 'nav-link-active'
-                        : isDark
-                        ? 'text-gray-400 hover:text-gold'
+                    `animated-link font-heading text-xs tracking-[0.2em] uppercase transition-colors duration-300 ${isActive
+                      ? 'nav-link-active'
+                      : isDark
+                        ? 'text-white hover:text-gold-light'
                         : 'text-gray-600 hover:text-gold'
                     }`
                   }
@@ -87,7 +86,7 @@ export default function Navbar() {
             <div className="flex items-center gap-4">
 
               {/* Theme toggle */}
-              <motion.button
+              {/* <motion.button
                 whileTap={{ scale: 0.9 }}
                 onClick={toggleTheme}
                 className="p-2 transition-colors duration-300"
@@ -95,7 +94,7 @@ export default function Navbar() {
                 aria-label="Basculer le thème"
               >
                 {isDark ? <Sun size={16} /> : <Moon size={16} />}
-              </motion.button>
+              </motion.button> */}
 
               {/* CTA Desktop */}
               <NavLink to="/contact" className="hidden lg:block">
@@ -170,10 +169,10 @@ export default function Navbar() {
                 className="flex items-center justify-between px-8 py-2"
                 style={{ borderBottom: '1px solid rgba(197,160,89,0.1)' }}
               >
-                  <motion.img
+                <motion.img
                   src="./images/logo.png"
                   alt="Logo Hermon Eximia"
-                  className="w-24 sm:w-28 md:w-56 h-auto object-contain"
+                  className="h-24 md:h-36 w-auto object-contain"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 />
@@ -226,8 +225,8 @@ export default function Navbar() {
                               color: isActive
                                 ? '#C5A059'
                                 : isDark
-                                ? 'rgba(240,237,232,0.55)'
-                                : 'rgba(30,30,30,0.6)',
+                                  ? 'rgba(240,237,232,0.55)'
+                                  : 'rgba(30,30,30,0.6)',
                             }}
                           >
                             {item.label}
@@ -272,7 +271,7 @@ export default function Navbar() {
                   Diagnostic Gratuit (2h)
                 </NavLink>
 
-                
+
               </motion.div>
 
               {/* Accent violet en bas du drawer */}

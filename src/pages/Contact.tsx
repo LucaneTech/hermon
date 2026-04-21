@@ -5,12 +5,8 @@ import emailjs from '@emailjs/browser'
 import PageTransition from '../components/PageTransition'
 import SectionReveal from '../components/SectionReveal'
 import { useTheme } from '../hooks/useTheme'
+import { EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID } from '../utils/constants'
 
-// ─── EmailJS config — replace with your own keys ──────────────────────────────
-const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID'
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'
-const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'
-// ──────────────────────────────────────────────────────────────────────────────
 
 type Status = 'idle' | 'sending' | 'success' | 'error'
 
@@ -207,20 +203,20 @@ export default function Contact() {
                       <div>
                         <label className="form-label">Catégorie Concernée *</label>
                         <select name="category" value={formData.category} onChange={handleChange} required className="form-input">
-                          <option value="Stratégique">Stratégique — Dirigeants</option>
-                          <option value="Opérationnelle">Opérationnelle — Cadres</option>
-                          <option value="Talent">Talent — Collaborateurs</option>
-                          <option value="Groupe">Offre Groupe — Entreprise</option>
+                          <option value="Stratégique" className='text-gray-900'>Stratégique — Dirigeants</option>
+                          <option value="Opérationnelle" className='text-gray-900'>Opérationnelle — Cadres</option>
+                          <option value="Talent" className='text-gray-900'>Talent — Collaborateurs</option>
+                          <option value="Groupe" className='text-gray-900'>Offre Groupe — Entreprise</option>
                         </select>
                       </div>
                       {/* Subject */}
                       <div>
                         <label className="form-label">Objet *</label>
                         <select name="subject" value={formData.subject} onChange={handleChange} required className="form-input">
-                          <option value="Diagnostic Offert (2h)">Diagnostic Offert (2h)</option>
-                          <option value="Demande de Devis">Demande de Devis</option>
-                          <option value="Partenariat">Partenariat Stratégique</option>
-                          <option value="Information">Demande d'Information</option>
+                          <option value="Diagnostic Offert (2h)" className='text-gray-900'>Diagnostic Offert (2h)</option>
+                          <option value="Demande de Devis" className='text-gray-900'>Demande de Devis</option>
+                          <option value="Partenariat" className='text-gray-900'>Partenariat Stratégique</option>
+                          <option value="Information" className='text-gray-900'>Demande d'Information</option>
                         </select>
                       </div>
                     </div>

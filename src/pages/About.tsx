@@ -4,55 +4,96 @@ import { NavLink } from 'react-router-dom'
 import PageTransition from '../components/PageTransition'
 import SectionReveal from '../components/SectionReveal'
 import { useTheme } from '../hooks/useTheme'
-
 const principles = [
-  { icon: Lock, title: 'Confidentialité Absolue', desc: 'Ce que nous savons de vous reste entre nous. Clause de confidentialité renforcée inscrite dans chaque contrat, sans exception.' },
-  { icon: Zap, title: 'Disponibilité Permanente', desc: 'Nos clients sont prioritaires 24 heures sur 24, 7 jours sur 7, 365 jours par an. La notion de "hors horaires" n\'existe pas pour nous.' },
-  { icon: Eye, title: 'Discrétion Royale', desc: 'Notre travail se voit à travers votre sérénité, jamais à travers notre présence. Nous sommes le silence qui vous protège.' },
-  { icon: Heart, title: 'Adaptation Constante', desc: 'Nous évoluons avec vous et pour vous. Vos changements de vie deviennent nos nouvelles priorités, sans délai ni friction.' },
+  {
+    icon: Lock,
+    title: 'Confidentialité Absolue',
+    desc: `Ce que nous savons de vous reste entre nous. Clause de confidentialité renforcée, inscrite dans chaque contrat, sans exception.`,
+  },
+  {
+    icon: Zap,
+    title: 'Disponibilité Permanente',
+    desc: `Nos clients sont prioritaires 24 heures sur 24, 7 jours sur 7, 365 jours par an. La notion de "hors horaires" n'existe pas pour nous.`,
+  },
+  {
+    icon: Eye,
+    title: 'Discrétion Royale',
+    desc: `Notre travail se reflète dans votre sérénité, jamais dans notre présence. Nous sommes le silence qui vous protège.`,
+  },
+  {
+    icon: Heart,
+    title: 'Adaptation Constante',
+    desc: `Nous évoluons avec vous et pour vous. Vos changements de vie deviennent immédiatement nos priorités, sans délai ni friction.`,
+  },
 ]
 
 const timeline = [
-  { year: 'Genèse', text: 'HERMON EXIMIA naît d\'un constat implacable : les dirigeants africains les plus brillants perdent des heures précieuses sur des tâches qui ne méritent pas leur attention.' },
-  { year: 'Vision', text: 'Créer le premier service de conciergerie multi-domaine premium au Congo, capable de rivaliser avec les standards des grandes maisons européennes.' },
-  { year: 'Mission', text: 'Libérer chaque dirigeant, cadre et talent de tout ce qui l\'empêche de réaliser sa pleine mesure — professionnellement et personnellement.' },
-  { year: 'Promesse', text: 'Chaque client EXIMIA bénéficie d\'un interlocuteur unique, formé à l\'excellence, dédié à sa réussite globale, disponible quand il en a besoin.' },
+  {
+    year: 'Genèse',
+    text: `HERMON EXIMIA naît d'un constat implacable : les dirigeants africains les plus brillants perdent des heures précieuses sur des tâches qui ne méritent pas leur attention.`,
+  },
+  {
+    year: 'Vision',
+    text: `Créer le premier service de conciergerie multi-domaine premium au Congo, capable de rivaliser avec les standards des grandes maisons européennes.`,
+  },
+  {
+    year: 'Mission',
+    text: `Libérer chaque dirigeant, cadre et talent de tout ce qui l'empêche de réaliser pleinement son potentiel, tant professionnel que personnel.`,
+  },
+  {
+    year: 'Promesse',
+    text: `Chaque client EXIMIA bénéficie d'un interlocuteur unique, formé à l'excellence, dédié à sa réussite globale et disponible à tout moment.`,
+  },
 ]
-
 export default function About() {
   const { isDark } = useTheme()
 
   return (
     <PageTransition>
       {/* ═══ HERO ═══ */}
-      <section className="relative pt-40 pb-24 px-6 overflow-hidden">
-        <div className="absolute inset-0"
-          style={{
-            background: isDark
-              ? 'radial-gradient(ellipse at 30% 50%, rgba(75,0,130,0.12) 0%, transparent 60%), radial-gradient(ellipse at 70% 50%, rgba(197,160,89,0.05) 0%, transparent 60%)'
-              : 'radial-gradient(ellipse at 30% 50%, rgba(75,0,130,0.06) 0%, transparent 60%)',
-          }}
-        />
-        <div className="relative z-10 max-w-5xl mx-auto">
-          <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="section-label mb-6">
-            Qui Sommes-Nous
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.8 }}
-            className="section-title mb-8" style={{ maxWidth: '700px' }}
-          >
-            L'<em>Excellence Discrète</em><br />comme Philosophie
-          </motion.h1>
-          <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 0.7 }} className="divider-gold" />
-          <motion.p
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }}
-            className="font-body text-lg leading-relaxed mt-8" style={{ color: 'var(--text-secondary)', maxWidth: '600px' }}
-          >
-            HERMON EXIMIA n'est pas une conciergerie standard. Nous sommes le partenaire 
-            de l'efficacité directionnelle — l'architecte du temps libéré des leaders qui façonnent demain.
-          </motion.p>
-        </div>
-      </section>
+      <section className="relative pt-28 md:pt-40 pb-10 md:pb-24 px-6 overflow-hidden">
+  {/* Image d'arrière-plan */}
+  <div className="absolute inset-0 z-0">
+    <img 
+      src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+      alt="Leadership moderne - équipe exécutive en réunion"
+      className="w-full h-full object-cover"
+    />
+  </div>
+  
+  {/* Overlay plus sombre avec le même dégradé */}
+  <div className="absolute inset-0 z-1"
+    style={{
+      background: isDark
+        ? 'radial-gradient(ellipse at 30% 50%, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 60%), radial-gradient(ellipse at 70% 50%, rgba(197,160,89,0.15) 0%, transparent 80%)'
+        : 'radial-gradient(ellipse at 30% 50%, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.45) 60%), radial-gradient(ellipse at 70% 50%, rgba(197,160,89,0.1) 0%, transparent 80%)',
+    }}
+  />
+   <div className="hero-glow w-[600px] h-[600px] top-4 left-0 bg-violet-900/90 opacity-30"   />
+   <div className="hero-glow w-[600px] h-[600px] top-[50%] left-4 bg-black opacity-50"   />
+   
+  
+  
+  <div className="relative z-10 max-w-5xl mx-auto">
+    <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="section-label mb-6">
+      Qui Sommes-Nous
+    </motion.p>
+    <motion.h1
+      initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.8 }}
+      className="section-title mb-8" style={{ maxWidth: '700px' }}
+    >
+      L'<em>Excellence Discrète</em><br />comme Philosophie
+    </motion.h1>
+    <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 0.7 }} className="divider-gold" />
+    <motion.p
+      initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }}
+      className="font-body text-lg leading-relaxed mt-8" style={{ color: 'var(--text-secondary)', maxWidth: '600px' }}
+    >
+      HERMON EXIMIA n'est pas une conciergerie standard. Nous sommes le partenaire 
+      de l'efficacité directionnelle — l'architecte du temps libéré des leaders qui façonnent demain.
+    </motion.p>
+  </div>
+</section>
 
       {/* ═══ STORY ═══ */}
       <section className="py-24 px-6" style={{ background: isDark ? '#080808' : '#f5f2ee' }}>
@@ -95,7 +136,7 @@ export default function About() {
                   <p className="section-label mb-6">Notre Positionnement</p>
                   <div className="mb-8">
                     <p className="font-heading text-xs tracking-widest uppercase mb-4" style={{ color: 'rgba(160,152,144,0.5)' }}>Nous ne sommes pas :</p>
-                    {['Une conciergerie standard', 'Un simple service d\'assistance', 'Un prestataire parmi d\'autres'].map(item => (
+                    {['Une conciergerie standard', "Un simple service d'assistance", "Un prestataire parmi d'autres"].map(item => (
                       <div key={item} className="flex items-center gap-3 mb-2">
                         <div className="w-3 h-px" style={{ background: 'rgba(160,152,144,0.4)' }} />
                         <span className="font-body text-sm line-through" style={{ color: 'rgba(160,152,144,0.5)' }}>{item}</span>
@@ -105,9 +146,9 @@ export default function About() {
                   <div>
                     <p className="font-heading text-xs tracking-widest uppercase mb-4" style={{ color: '#C5A059' }}>Nous sommes :</p>
                     {[
-                      'Le partenaire de l\'efficacité directionnelle',
-                      'Le garant de la sérénité des décideurs',
-                      'L\'architecte du temps libéré',
+                      "Le partenaire de l'efficacité directionnelle",
+                      "Le garant de la sérénité des décideurs",
+                      "L'architecte du temps libéré",
                     ].map(item => (
                       <div key={item} className="flex items-center gap-3 mb-3">
                         <div className="w-3 h-px" style={{ background: '#C5A059' }} />
@@ -145,7 +186,7 @@ export default function About() {
                 <div className="pillar-card h-full flex gap-6">
                   <div className="flex-shrink-0">
                     <div
-                      className="w-12 h-12 flex items-center justify-center"
+                      className="w-12 h-12 flex items-center justify-center rounded-sm"
                       style={{ border: '1px solid rgba(197,160,89,0.3)', background: 'rgba(75,0,130,0.1)' }}
                     >
                       <p.icon size={20} style={{ color: '#C5A059' }} />
@@ -172,11 +213,11 @@ export default function About() {
           <SectionReveal>
             <div style={{ border: '1px solid rgba(197,160,89,0.15)', overflow: 'hidden' }}>
               {[
-                { offer: 'La Tranquillité', meaning: 'L\'absence totale de préoccupation logistique' },
-                { offer: 'L\'Efficacité', meaning: 'Chaque minute réinvestie dans l\'essentiel' },
-                { offer: 'La Liberté', meaning: 'La capacité de se concentrer sans entrave' },
-                { offer: 'La Dignité', meaning: 'Un accompagnement discret et irréprochable' },
-                { offer: 'Le Temps', meaning: 'La ressource la plus rare et la plus précieuse' },
+                { offer: 'La Tranquillité', meaning: "L'absence totale de préoccupation logistique" },
+                { offer: "L'Efficacité", meaning: "Chaque minute réinvestie dans l'essentiel" },
+                { offer: 'La Liberté', meaning: "La capacité de se concentrer sans entrave" },
+                { offer: 'La Dignité', meaning: "Un accompagnement discret et irréprochable" },
+                { offer: 'Le Temps', meaning: "La ressource la plus rare et la plus précieuse" },
               ].map((row, i) => (
                 <div
                   key={row.offer}

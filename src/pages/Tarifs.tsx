@@ -62,7 +62,7 @@ const plans = [
       'Accompagnement physique',
       'Confidentialité absolue contractuelle',
     ],
-    accent: '#4B0082',
+    accent: '#DAB1DA',
     accentBg: 'rgba(75,0,130,0.1)',
     featured: false,
   },
@@ -117,7 +117,7 @@ export default function Tarifs() {
                 key={d}
                 whileTap={{ scale: 0.96 }}
                 onClick={() => setActiveDuration(i)}
-                className="px-6 py-3 font-heading text-xs tracking-widest uppercase transition-all duration-300"
+                className="px-6 py-3 font-heading text-xs rounded-sm tracking-widest uppercase transition-all duration-300"
                 style={{
                   background: activeDuration === i ? '#C5A059' : 'transparent',
                   color: activeDuration === i ? '#0a0a0a' : 'var(--text-secondary)',

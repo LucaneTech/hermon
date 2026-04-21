@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 import PageTransition from '../components/PageTransition'
 import SectionReveal from '../components/SectionReveal'
 import { useTheme } from '../hooks/useTheme'
+
 const targets = [
   {
     id: 'strategique',
@@ -12,10 +13,16 @@ const targets = [
     title: 'Catégorie Stratégique',
     subtitle: 'Dirigeants · COMEX · Actionnaires · Associés',
     image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1200',
-    reality: 'Temps ultra-critique, vie professionnelle et personnelle entremêlées, exposition maximale aux parasites opérationnels. Chaque heure perdue est une décision stratégique abandonnée.',
-    offer: 'Interlocuteur Senior Unique, disponibilité 24h/24 · 7j/7 · 365j/an, prise en charge illimitée (familiale, professionnelle, diplomatique, patrimoniale).',
-    gain: 'Libération totale de l\'esprit. Vous ne gérez plus rien — vous décidez. Vous ne coordonnez plus — vous leadez.',
-    services: ['Assistance 24/7/365', 'Agenda privé intégral', 'Protocole VIP complet', 'Accompagnement physique', 'Confidentialité absolue'],
+    reality: `Temps ultra-critique, vie professionnelle et personnelle entremêlées, exposition maximale aux parasites opérationnels. Chaque heure perdue est une décision stratégique abandonnée.`,
+    offer: `Interlocuteur Senior Unique, disponibilité 24h/24 · 7j/7 · 365j/an, prise en charge illimitée (familiale, professionnelle, diplomatique, patrimoniale).`,
+    gain: `Libération totale de l'esprit. Vous ne gérez plus rien — vous décidez. Vous ne coordonnez plus — vous leadez.`,
+    services: [
+      'Assistance 24/7/365',
+      'Agenda privé intégral',
+      'Protocole VIP complet',
+      'Accompagnement physique',
+      'Confidentialité absolue',
+    ],
     accent: 'rgba(75,0,130,0.3)',
     accentBorder: 'rgba(75,0,130,0.5)',
   },
@@ -26,10 +33,16 @@ const targets = [
     title: 'Catégorie Opérationnelle',
     subtitle: 'Cadres Dirigeants · Managers Supérieurs · Experts de haut niveau',
     image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=1200',
-    reality: 'Mobilité permanente, gestion d\'imprévus terrain, besoin de réactivité immédiate. La performance est freinée par la friction logistique, pas par les compétences.',
-    offer: 'Assistance prioritaire 6h–22h, 7j/7 — gestion complète des déplacements, support administratif urgent, tâches personnelles courantes, hotline dédiée.',
-    gain: 'Fluidité de mouvement absolue. Retrouvez jusqu\'à 15 heures de productivité par semaine réinvesties dans votre excellence métier.',
-    services: ['Disponibilité 6h–22h', 'Gestion des déplacements', 'Support administratif', 'Tâches personnelles', 'Hotline prioritaire'],
+    reality: `Mobilité permanente, gestion d'imprévus terrain, besoin de réactivité immédiate. La performance est freinée par la friction logistique, pas par les compétences.`,
+    offer: `Assistance prioritaire 6h–22h, 7j/7 — gestion complète des déplacements, support administratif urgent, tâches personnelles courantes, hotline dédiée.`,
+    gain: `Fluidité de mouvement absolue. Retrouvez jusqu'à 15 heures de productivité par semaine, réinvesties dans votre excellence métier.`,
+    services: [
+      'Disponibilité 6h–22h',
+      'Gestion des déplacements',
+      'Support administratif',
+      'Tâches personnelles',
+      'Hotline prioritaire',
+    ],
     accent: 'rgba(197,160,89,0.15)',
     accentBorder: 'rgba(197,160,89,0.4)',
   },
@@ -38,17 +51,22 @@ const targets = [
     icon: TrendingUp,
     num: '03',
     title: 'Catégorie Talent',
-    subtitle: 'Cadres · Collaborateurs Stratégiques · Jeunes Talents d\'Exception',
+    subtitle: "Cadres · Collaborateurs Stratégiques · Jeunes Talents d'Exception",
     image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=1200',
-    reality: 'Ambition maximale, mais freinés par les tâches chronophages du quotidien — courses, administratif, organisation personnelle. Le potentiel est là. Le temps, lui, manque.',
-    offer: 'Services essentiels premium sur les jours ouvrés 8h–20h : courses, pressing, administratif courant, organisation personnelle, plateforme digitale dédiée.',
-    gain: 'Focalisation totale sur la montée en compétence et la création de valeur. Rétention accrue des meilleurs profils au sein de votre organisation.',
-    services: ['Jours ouvrés 8h–20h', 'Services quotidiens', 'Administratif courant', 'Organisation personnelle', 'Plateforme digitale'],
+    reality: `Ambition maximale, mais freinée par les tâches chronophages du quotidien — courses, administratif, organisation personnelle. Le potentiel est là. Le temps, lui, manque.`,
+    offer: `Services essentiels premium sur les jours ouvrés 8h–20h : courses, pressing, administratif courant, organisation personnelle, plateforme digitale dédiée.`,
+    gain: `Focalisation totale sur la montée en compétence et la création de valeur. Rétention accrue des meilleurs profils au sein de votre organisation.`,
+    services: [
+      'Jours ouvrés 8h–20h',
+      'Services quotidiens',
+      'Administratif courant',
+      'Organisation personnelle',
+      'Plateforme digitale',
+    ],
     accent: 'rgba(22,101,52,0.2)',
     accentBorder: 'rgba(34,197,94,0.3)',
   },
-];
-
+]
 export default function Cibles() {
   const { isDark } = useTheme()
 
