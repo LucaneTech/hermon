@@ -136,11 +136,13 @@ export default function Cibles() {
                     />
                     <div className="absolute top-6 left-6">
                       <span
-                        className="font-heading text-5xl"
-                        style={{ color: 'rgba(197,160,89,0.2)', fontWeight: 200 }}
+                        className="font-heading text-5xl text-white font-[200]"
+                       
                       >
                         {target.num}
                       </span>
+
+                     
                     </div>
                   </div>
                 </div>
@@ -150,7 +152,7 @@ export default function Cibles() {
               <SectionReveal direction={i % 2 === 0 ? 'right' : 'left'} delay={0.15}>
                 <div className="flex items-center gap-3 mb-4">
                   <div
-                    className="w-10 h-10 flex items-center justify-center"
+                    className="w-10 h-10 flex items-center justify-center rounded-sm"
                     style={{ border: `1px solid ${target.accentBorder}`, background: target.accent }}
                   >
                     <target.icon size={18} style={{ color: '#C5A059' }} />

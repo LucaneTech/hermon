@@ -80,7 +80,7 @@ export default function About() {
     </motion.p>
     <motion.h1
       initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.8 }}
-      className="section-title mb-8" style={{ maxWidth: '700px' }}
+      className="section-title mb-4 md:mb-8" style={{ maxWidth: '700px' }}
     >
       L'<em>Excellence Discrète</em><br />comme Philosophie
     </motion.h1>
