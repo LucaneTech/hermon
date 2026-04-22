@@ -47,7 +47,7 @@ export default function Footer() {
             Libérez votre temps.<br />
             <em style={{ color: '#C5A059' }}>Régnez sur vos priorités.</em>
           </h2>
-          
+
           <NavLink to="/contact">
             <motion.button
               whileHover={{ scale: 1.02 }}
@@ -131,7 +131,7 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <Mail size={14} className="mt-1 flex-shrink-0" style={{ color: '#C5A059' }} />
                 <a href="mailto:contact@hermoneximia.com" className="font-body text-sm animated-link" style={{ color: 'var(--text-secondary)' }}>
-                  contact@hermoneximia.com
+                  contact@hermon-eximia.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -149,12 +149,10 @@ export default function Footer() {
           className="mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
           style={{ borderTop: '1px solid rgba(197,160,89,0.1)' }}
         >
-          <p className="font-body text-xs" style={{ color: 'rgba(160,152,144,0.5)' }}>
-            © 2026 HERMON EXIMIA. Tous droits réservés. Conformité OHADA & Droit Congolais.
+          <p className="font-body text-xs text-center" style={{ color: 'rgba(160,152,144,0.5)' }}>
+            © 2026 HERMON EXIMIA. Tous droits réservés. 
           </p>
-          <p className="font-body text-xs" style={{ color: 'rgba(160,152,144,0.4)' }}>
-            Responsable : FERNANDES PETERS KETSIA MANUELLA
-          </p>
+        
         </div>
       </div>
     </footer>

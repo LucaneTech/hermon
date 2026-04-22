@@ -127,7 +127,7 @@ export default function Cibles() {
                     <img
                       src={target.image}
                       alt={target.title}
-                      className="w-full h-full object-cover"
+                      className="object-cover max-h-7xl h-full w-full"
                       style={{ filter: 'brightness(0.8) saturate(0.9)' }}
                     />
                     <div
