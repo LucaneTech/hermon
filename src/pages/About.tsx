@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 import PageTransition from '../components/PageTransition'
 import SectionReveal from '../components/SectionReveal'
 import { useTheme } from '../hooks/useTheme'
+import TeamGrid from '../components/aboutSection/OurTeam'
 const principles = [
   {
     icon: Lock,
@@ -163,8 +164,8 @@ export default function About() {
                   className="mt-6 p-6"
                   style={{ background: isDark ? 'rgba(26,26,26,0.6)' : 'rgba(240,237,232,0.8)', border: '1px solid rgba(197,160,89,0.1)' }}
                 >
-                  <p className="font-body text-xs" style={{ color: 'var(--text-secondary)' }}>Responsable Manager du Développement Stratégique</p>
-                  <p className="font-display text-lg mt-1" style={{ color: '#C5A059' }}>FERNANDES PETERS KETSIA MANUELLA</p>
+                  <p className="font-body text-xs" style={{ color: 'var(--text-secondary)' }}>Responsable de département de développement statistique de la conciergerie</p>
+                  <p className="font-display text-lg mt-1" style={{ color: '#C5A059' }}>Mme MOUSSOKI MASSAMBA JESSICA DEO-GRACIAS</p>
                   <p className="font-body text-xs mt-1" style={{ color: 'var(--text-secondary)' }}>Pointe-Noire, République du Congo</p>
                 </div>
               </div>
@@ -172,6 +173,9 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      {/*TEAM*/}
+      <TeamGrid/>
 
       {/* ═══ PRINCIPLES ═══ */}
       <section className="py-32 px-6">

@@ -144,7 +144,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div
           className="mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
           style={{ borderTop: '1px solid rgba(197,160,89,0.1)' }}

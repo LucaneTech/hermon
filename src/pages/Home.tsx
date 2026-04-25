@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 import PageTransition from '../components/PageTransition'
 import SectionReveal from '../components/SectionReveal'
 import { useTheme } from '../hooks/useTheme'
+import { image } from 'framer-motion/client'
 
 const values = [
   {
@@ -35,26 +36,31 @@ const pillars = [
     num: '01',
     title: 'Excellence Événementielle',
     tag: "L'art de recevoir dignement",
+    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=800',
   },
   {
     num: '02',
     title: 'Mobilité Intelligente',
     tag: 'Voyager sans jamais être déplacé',
+    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=800',
   },
   {
     num: '03',
     title: 'Fiabilité Totale',
     tag: 'Des partenaires dignes de confiance',
+    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=800',
   },
   {
     num: '04',
     title: 'Réactivité Absolue',
     tag: "L'administration au service de l'action",
+    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=800',
   },
   {
     num: '05',
     title: 'Sur-Mesure Personnel',
     tag: "Le dirigeant d'abord, la personne ensuite",
+    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=800',
   },
 ]
 
@@ -64,20 +70,97 @@ export default function Home() {
   return (
     <PageTransition>
       {/* ═══ HERO ═══ */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden  md:pt-32 md:pb-12">
-        {/* Background */}
-        <div
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden md:pt-32 md:pb-12">
+        {/* Background avec animation d'apparition ET mouvement continu */}
+        <motion.div
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="absolute inset-0"
+        >
+          <motion.div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `linear-gradient(rgba(10,10,10,0.65), rgba(10,10,10,0.85)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1920')`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundAttachment: 'fixed',
+            }}
+            animate={{
+              scale: [1, 1.05, 1],
+              x: [0, -10, 10, -5, 5, 0],
+              y: [0, -5, 5, -3, 3, 0],
+            }}
+            transition={{
+              scale: {
+                duration: 20,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut"
+              },
+              x: {
+                duration: 25,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut"
+              },
+              y: {
+                duration: 30,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut"
+              }
+            }}
+          />
+        </motion.div>
+
+        {/* Animation du gradient superposé */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2, delay: 0.2 }}
           className="absolute inset-0"
           style={{
-            backgroundImage: `linear-gradient(rgba(10,10,10,0.75), rgba(10,10,10,0.85)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1920')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            background: 'radial-gradient(circle at center, transparent 0%, rgba(10,10,10,0.3) 100%)',
           }}
         />
 
-        {/* Glows */}
-        <div className="hero-glow" style={{ width: '600px', height: '600px', background: 'rgba(75,0,130,0.15)', top: '20%', left: '10%' }} />
-        <div className="hero-glow" style={{ width: '400px', height: '400px', background: 'rgba(197,160,89,0.08)', top: '50%', right: '15%' }} />
+        {/* Glows avec animation différée ET mouvement */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            x: [0, 20, -15, 10, 0],
+            y: [0, -10, 15, -5, 0],
+          }}
+          transition={{
+            duration: 1,
+            delay: 0.5,
+            x: { duration: 15, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" },
+            y: { duration: 12, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }
+          }}
+          className="hero-glow absolute rounded-full blur-3xl"
+          style={{ width: '600px', height: '600px', background: 'rgba(75,0,130,0.15)', top: '20%', left: '10%' }}
+        />
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            x: [0, -15, 20, -10, 0],
+            y: [0, 15, -10, 5, 0],
+          }}
+          transition={{
+            duration: 1,
+            delay: 0.7,
+            x: { duration: 18, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" },
+            y: { duration: 14, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }
+          }}
+          className="hero-glow absolute rounded-full blur-3xl"
+          style={{ width: '400px', height: '400px', background: 'rgba(197,160,89,0.08)', top: '50%', right: '15%' }}
+        />
 
         {/* Content */}
         <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
@@ -144,8 +227,6 @@ export default function Home() {
             </NavLink>
           </motion.div>
         </div>
-
-
       </section>
 
       {/* ═══ STATS BAR ═══ */}
@@ -187,9 +268,9 @@ export default function Home() {
                 Entre sollicitations internes, imprévus logistiques et tâches administratives, le temps consacré à la réflexion
                 stratégique se réduit dangereusement.
               </p>
-           
 
-               <NavLink to="/a-propos">
+
+              <NavLink to="/a-propos">
                 <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="btn-gold">
                   Notre Vision
                   <ArrowRight size={14} />
@@ -252,14 +333,65 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
             {pillars.map((pillar, i) => (
               <SectionReveal key={pillar.num} delay={i * 0.1}>
-                <div className="pillar-card h-full">
-                  <div className="font-heading text-3xl mb-6 text-gold-dark " >{pillar.num}</div>
-                  <h3 className="font-heading text-sm tracking-widest uppercase mb-3" style={{ color: 'var(--text-primary)', fontWeight: 300 }}>
-                    {pillar.title}
-                  </h3>
-                  <p className="font-display text-md italic" style={{ color: 'rgba(197,160,89,0.6)' }}>
-                    {pillar.tag}
-                  </p>
+                <div
+                  className="relative overflow-hidden group"
+                  style={{ height: '380px', cursor: 'default' }}
+                >
+                  {/* Image de fond */}
+                  <img
+                    src={pillar.image}
+                    alt={pillar.title}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    style={{ filter: 'brightness(0.65) saturate(0.8)' }}
+                  />
+
+                  {/* Vignette sombre permanente en bas */}
+                  <div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                      background: 'linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.3) 45%, transparent 90%)',
+                    }}
+                  />
+
+                  {/* Fond animé — position absolute en bas */}
+                  <motion.div
+                    className="absolute bottom-0 left-0 right-0 overflow-hidden"
+                    initial={{ height: '90px' }}
+                    whileHover={{ height: '220px' }}
+                    transition={{ duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }}
+                    style={{
+                      background: 'linear-gradient(135deg, rgba(75,0,130,0.88) 0%, rgba(10,10,10,0.94) 100%)',
+                      borderTop: '1px solid rgba(197,160,89,0.35)',
+                    }}
+                  >
+                    {/* Num + Titre — toujours visibles */}
+                    <div className="px-5 pt-4 pb-0">
+                      <span
+                        className="font-heading block font-[200] text-lg md:text-2xl tracking-[0.3em] uppercase text-gold-dark"
+                        
+                      >
+                        {pillar.num}
+                      </span>
+                      <h3
+                        className="font-heading text-sm tracking-widest uppercase mt-1 leading-snug"
+                        style={{ color: '#f0ede8', fontWeight: 300 }}
+                      >
+                        {pillar.title}
+                      </h3>
+                    </div>
+
+                    {/* Ligne dorée — se déploie au hover */}
+                  
+
+                    {/* Tag / description — monte au hover */}
+                    <p
+                      className="font-display text-md italic px-5 mt-5 leading-relaxed"
+                      
+                      style={{ color: 'rgba(197,160,89,0.85)' }}
+                    >
+                      {pillar.tag}
+                    </p>
+                  </motion.div>
                 </div>
               </SectionReveal>
             ))}

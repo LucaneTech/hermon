@@ -15,8 +15,8 @@ export default function Loader({ onComplete }: LoaderProps) {
         if (p >= 100) {
           clearInterval(interval)
           setTimeout(() => setPhase('reveal'), 200)
-          setTimeout(() => setPhase('exit'), 1200)
-          setTimeout(() => onComplete(), 1800)
+          setTimeout(() => setPhase('exit'), 800)
+          setTimeout(() => onComplete(), 900)
           return 100
         }
         return p + Math.random() * 8 + 2
