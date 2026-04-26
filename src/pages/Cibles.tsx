@@ -73,15 +73,29 @@ export default function Cibles() {
   return (
     <PageTransition>
       {/* ═══ HERO ═══ */}
-      <section className="relative pt-40 pb-24 px-6 overflow-hidden">
-        <div
-          className="absolute inset-0"
+
+
+      <section className="relative pt-28 md:pt-40 md:pb-24 px-6 overflow-hidden">
+        {/* Image d'arrière-plan */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://imgs.search.brave.com/w9tkb4hkcu3lJX4vZbHjkvhXIPzSSEmqgZBeTEpEgM4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAyLzQwLzA2LzU2/LzM2MF9GXzI0MDA2/NTYwNl9TZFVDeFBH/MlBMNjBPaW1LOHJ3/RDQwZ0ZoMm1GSEtO/YS5qcGc"
+            alt="Architecture d'excellence - piliers de la réussite"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* Overlay plus sombre pour la lisibilité */}
+        <div className="absolute inset-0 z-1"
           style={{
             background: isDark
-              ? 'radial-gradient(ellipse at 20% 60%, rgba(75,0,130,0.1) 0%, transparent 50%), radial-gradient(ellipse at 80% 40%, rgba(197,160,89,0.06) 0%, transparent 50%)'
-              : 'none',
+              ? 'radial-gradient(ellipse at 30% 50%, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 60%), radial-gradient(ellipse at 70% 50%, rgba(197,160,89,0.15) 0%, transparent 80%)'
+              : 'radial-gradient(ellipse at 30% 50%, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.45) 60%), radial-gradient(ellipse at 70% 50%, rgba(197,160,89,0.1) 0%, transparent 80%)',
           }}
         />
+        <div className="hero-glow w-[600px] h-[600px] top-4 left-2 bg-black opacity-40" />
+        <div className="hero-glow w-[600px] h-[600px] top-[50%] left-4 bg-violet-950/20 opacity-80" />
+
         <div className="relative z-10 max-w-5xl mx-auto">
           <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="section-label mb-6">
             Nos Architectures de Soutien
@@ -95,12 +109,29 @@ export default function Cibles() {
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 0.7 }} className="divider-gold" />
           <motion.p
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }}
-            className="font-body text-lg leading-relaxed mt-8"
+            className="font-body text-lg leading-relaxed mt-8 mb-4"
             style={{ color: 'var(--text-secondary)', maxWidth: '560px' }}
           >
             Trois niveaux d'accompagnement, calibrés avec précision pour correspondre
             aux réalités et aux ambitions de chaque profil d'excellence.
           </motion.p>
+         
+
+          {/* Bouton d'action */}
+          <NavLink to="/tarifs">
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9, duration: 0.5 }}
+              className="btn-gold inline-flex items-center gap-2 px-8 py-3 rounded-md font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
+
+            >
+              <span className='inline-flex items-center gap-1'>
+                Découvrir nos tarifs
+                <ArrowRight className='w-5 h-5' />
+              </span>
+            </motion.button>
+          </NavLink>
         </div>
       </section>
 
@@ -137,12 +168,12 @@ export default function Cibles() {
                     <div className="absolute top-6 left-6">
                       <span
                         className="font-heading text-5xl text-white font-[200]"
-                       
+
                       >
                         {target.num}
                       </span>
 
-                     
+
                     </div>
                   </div>
                 </div>

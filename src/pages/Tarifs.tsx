@@ -84,10 +84,31 @@ export default function Tarifs() {
   return (
     <PageTransition>
       {/* ═══ HERO ═══ */}
-      <section className="relative pt-40 pb-24 px-6 overflow-hidden">
-        <div className="absolute inset-0" style={{ background: isDark ? 'radial-gradient(ellipse at 50% 70%, rgba(75,0,130,0.1) 0%, transparent 60%)' : 'none' }} />
-        <div className="relative z-10 max-w-5xl mx-auto">
-          <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="section-label mb-6">
+     
+
+       <section className="relative pt-28 md:pt-40 pb-10 md:pb-24 px-6 overflow-hidden">
+              {/* Image d'arrière-plan */}
+              <div className="absolute inset-0 z-0">
+                <img
+                  src="images/tarif.jpg"
+                  alt="Architecture d'excellence - piliers de la réussite"
+                  className="w-full max-h-[650px] h-full object-cover"
+                />
+              </div>
+      
+              {/* Overlay plus sombre pour la lisibilité */}
+              <div className="absolute inset-0 z-1"
+                style={{
+                  background: isDark
+                    ? 'radial-gradient(ellipse at 30% 50%, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 60%), radial-gradient(ellipse at 70% 50%, rgba(197,160,89,0.15) 0%, transparent 80%)'
+                    : 'radial-gradient(ellipse at 30% 50%, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.45) 60%), radial-gradient(ellipse at 70% 50%, rgba(197,160,89,0.1) 0%, transparent 80%)',
+                }}
+              />
+              <div className="hero-glow w-[600px] h-[600px] top-4 left-2 bg-black opacity-40" />
+              <div className="hero-glow w-[600px] h-[600px] top-[50%] left-4 bg-violet-950/20 opacity-80" />
+      
+              <div className="relative z-10 max-w-5xl mx-auto">
+                <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="section-label mb-6">
             Investissement & Engagement
           </motion.p>
           <motion.h1
@@ -105,11 +126,28 @@ export default function Tarifs() {
             Nos tarifs reflètent l'excellence, la rareté et la valeur réelle du service HERMON EXIMIA.
             Nous n'accompagnons que ceux qui ont compris que <strong style={{ color: 'var(--text-primary)' }}>le temps libéré n'a pas de prix.</strong>
           </motion.p>
-        </div>
-      </section>
+                <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 0.7 }} className="divider-gold mb-8" />
+      
+                {/* Bouton d'action */}
+                <NavLink to="/tarifs">
+                  <motion.button
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.9, duration: 0.5 }}
+                    className="btn-gold inline-flex items-center gap-2 px-8 py-3 rounded-md font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
+      
+                  >
+                    <span className='inline-flex items-center gap-1'>
+                      Découvrir nos tarifs
+                      <ArrowRight className='w-5 h-5' />
+                    </span>
+                  </motion.button>
+                </NavLink>
+              </div>
+            </section>
 
       {/* ═══ DURATION SELECTOR ═══ */}
-      <section className="px-6 pb-16">
+      <section className="px-6 pb-16 mt-6 md:mt-4">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-wrap justify-center gap-2 mb-16">
             {durations.map((d, i) => (

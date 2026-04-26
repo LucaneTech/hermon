@@ -36,31 +36,31 @@ const pillars = [
     num: '01',
     title: 'Excellence Événementielle',
     tag: "L'art de recevoir dignement",
-    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=800', // table dressée, bouquet, verres
   },
   {
     num: '02',
     title: 'Mobilité Intelligente',
     tag: 'Voyager sans jamais être déplacé',
-    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800', // voiture premium avec chauffeur côté aéroport
   },
   {
     num: '03',
     title: 'Fiabilité Totale',
     tag: 'Des partenaires dignes de confiance',
-    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1551836022-deb4988cc6c0?auto=format&fit=crop&q=80&w=800', // poignée de main confiante, style corporate
   },
   {
     num: '04',
     title: 'Réactivité Absolue',
     tag: "L'administration au service de l'action",
-    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&q=80&w=800', // planning / calendrier / action rapide
   },
   {
     num: '05',
     title: 'Sur-Mesure Personnel',
     tag: "Le dirigeant d'abord, la personne ensuite",
-    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800', // portrait élégant, attention personnalisée
   },
 ]
 
@@ -71,7 +71,7 @@ export default function Home() {
     <PageTransition>
       {/* ═══ HERO ═══ */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden md:pt-32 md:pb-12">
-        {/* Background avec animation d'apparition ET mouvement continu */}
+
         <motion.div
           initial={{ opacity: 0, scale: 1.1 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -125,6 +125,60 @@ export default function Home() {
           }}
         />
 
+        {/* ═══ 2 BULLES - VISIBILITÉ MOYENNE ═══ */}
+
+        {/* Bulle 1 - Violette, mouvement lent et discret */}
+        <motion.div
+          className="absolute rounded-full pointer-events-none"
+          style={{
+            width: '100px',
+            height: '100px',
+            background: 'radial-gradient(circle, rgba(138,43,226,0.25), rgba(75,0,130,0.1))',
+            border: '1px solid rgba(197,160,89,0.25)',
+            backdropFilter: 'blur(4px)',
+            top: '20%',
+            left: '10%',
+          }}
+          animate={{
+            y: [0, -30, 0, 30, 0],
+            x: [0, 20, -15, -10, 0],
+            scale: [1, 1.08, 0.96, 1.05, 1],
+            opacity: [0.3, 0.5, 0.25, 0.45, 0.3],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "easeInOut",
+          }}
+        />
+
+        {/* Bulle 2 - Dorée, mouvement un peu plus vif mais discret */}
+        <motion.div
+          className="absolute rounded-full pointer-events-none"
+          style={{
+            width: '70px',
+            height: '70px',
+            background: 'radial-gradient(circle, rgba(197,160,89,0.3), rgba(197,160,89,0.08))',
+            border: '1px solid rgba(197,160,89,0.3)',
+            backdropFilter: 'blur(3px)',
+            bottom: '25%',
+            right: '12%',
+          }}
+          animate={{
+            y: [0, -25, 0, 20, 0],
+            x: [0, -18, 22, -15, 0],
+            scale: [1, 1.12, 0.92, 1.08, 1],
+            opacity: [0.35, 0.55, 0.3, 0.5, 0.35],
+          }}
+          transition={{
+            duration: 9,
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "easeInOut",
+          }}
+        />
+
         {/* Glows avec animation différée ET mouvement */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -159,64 +213,122 @@ export default function Home() {
             y: { duration: 14, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }
           }}
           className="hero-glow absolute rounded-full blur-3xl"
-          style={{ width: '400px', height: '400px', background: 'rgba(197,160,89,0.08)', top: '50%', right: '15%' }}
+          style={{ width: '400px', height: '400px', background: 'rgba(197,160,89,0.1)', top: '50%', right: '15%' }}
         />
 
-        {/* Content */}
+        {/* ═══ CONTENU TEXTE AVEC ANIMATION FLUIDE ═══ */}
         <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
+
+          {/* Label - Slide + fade */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
+            transition={{ delay: 0.2, duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
             <p className="section-label mb-8">Conciergerie Multi-Domaine Premium</p>
           </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="font-display mb-8"
+          {/* H1 - Animation séquentielle fluide par ligne */}
+          <div
+            className="font-display mb-8 overflow-hidden"
             style={{ fontSize: 'clamp(3rem, 8vw, 7rem)', fontWeight: 300, lineHeight: 1.05 }}
           >
-            L'Art de<br />
-            <em style={{ color: '#C5A059', fontStyle: 'italic' }}>Libérer le Temps</em><br />
-            des Leaders
-          </motion.h1>
+            {/* Ligne 1 */}
+            <motion.div
+              initial={{ y: '100%', opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            >
+              L'Art de
+            </motion.div>
 
+            {/* Ligne 2 - Version dorée avec léger scale */}
+            <motion.div
+              initial={{ y: '100%', opacity: 0, scale: 0.96 }}
+              animate={{ y: 0, opacity: 1, scale: 1 }}
+              transition={{ delay: 0.6, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <em style={{ color: '#C5A059', fontStyle: 'italic' }}>Libérer le Temps</em>
+            </motion.div>
+
+            {/* Ligne 3 */}
+            <motion.div
+              initial={{ y: '100%', opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.8, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            >
+              des Leaders
+            </motion.div>
+          </div>
+
+          {/* Séparateur doré - Scale X */}
           <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ delay: 0.9, duration: 0.6 }}
+            initial={{ scaleX: 0, opacity: 0 }}
+            animate={{ scaleX: 1, opacity: 1 }}
+            transition={{ delay: 1.0, duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="mx-auto mb-8 h-px max-w-xs"
             style={{ background: 'linear-gradient(90deg, transparent, #C5A059, transparent)' }}
           />
 
+          {/* Paragraphe - Fade + Slide + Blur */}
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.0, duration: 0.8 }}
+            initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{ delay: 1.2, duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="font-body text-lg mx-auto mb-12 leading-relaxed"
             style={{ color: 'rgba(240,237,232,0.65)', maxWidth: '580px' }}
           >
             HERMON EXIMIA prend en charge tout ce qui vous empêche de décider.
-            Vous arrivez, vous présidez, vous repartez. <span style={{ color: '#C5A059' }}>Tout le reste est notre affaire.</span>
+            Vous arrivez, vous présidez, vous repartez.{' '}
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.5, duration: 0.8 }}
+              style={{ color: '#C5A059' }}
+            >
+              Tout le reste est notre affaire.
+            </motion.span>
           </motion.p>
 
+          {/* Boutons - Stagger animation */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 0.6 }}
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.15,
+                  delayChildren: 1.4,
+                },
+              },
+            }}
             className="flex flex-wrap items-center justify-center gap-4"
           >
             <NavLink to="/contact">
-              <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="btn-gold">
+              <motion.button
+                variants={{
+                  hidden: { opacity: 0, x: -20 },
+                  visible: { opacity: 1, x: 0 },
+                }}
+                transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className="btn-gold"
+              >
                 Diagnostic Gratuit (2h)
                 <ArrowRight size={14} />
               </motion.button>
             </NavLink>
+
             <NavLink to="/services">
               <motion.button
+                variants={{
+                  hidden: { opacity: 0, x: 20 },
+                  visible: { opacity: 1, x: 0 },
+                }}
+                transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 className="font-heading text-xs tracking-[0.2em] uppercase py-3 px-8 transition-colors duration-300 animated-link rounded-md"
@@ -334,7 +446,7 @@ export default function Home() {
             {pillars.map((pillar, i) => (
               <SectionReveal key={pillar.num} delay={i * 0.1}>
                 <div
-                  className="relative overflow-hidden group"
+                  className="relative overflow-hidden group border border-gold-light/50 rounded-sm"
                   style={{ height: '380px', cursor: 'default' }}
                 >
                   {/* Image de fond */}
@@ -357,7 +469,7 @@ export default function Home() {
                   <motion.div
                     className="absolute bottom-0 left-0 right-0 overflow-hidden"
                     initial={{ height: '90px' }}
-                    whileHover={{ height: '220px' }}
+                    whileHover={{ height: '200px' }}
                     transition={{ duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }}
                     style={{
                       background: 'linear-gradient(135deg, rgba(75,0,130,0.88) 0%, rgba(10,10,10,0.94) 100%)',
@@ -368,7 +480,7 @@ export default function Home() {
                     <div className="px-5 pt-4 pb-0">
                       <span
                         className="font-heading block font-[200] text-lg md:text-2xl tracking-[0.3em] uppercase text-gold-dark"
-                        
+
                       >
                         {pillar.num}
                       </span>
@@ -381,12 +493,12 @@ export default function Home() {
                     </div>
 
                     {/* Ligne dorée — se déploie au hover */}
-                  
+
 
                     {/* Tag / description — monte au hover */}
                     <p
                       className="font-display text-md italic px-5 mt-5 leading-relaxed"
-                      
+
                       style={{ color: 'rgba(197,160,89,0.85)' }}
                     >
                       {pillar.tag}

@@ -56,7 +56,7 @@ export default function About() {
   {/* Image d'arrière-plan */}
   <div className="absolute inset-0 z-0">
     <img 
-      src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+      src="images/about.jpg"
       alt="Leadership moderne - équipe exécutive en réunion"
       className="w-full h-full object-cover"
     />

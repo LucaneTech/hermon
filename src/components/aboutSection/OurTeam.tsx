@@ -5,10 +5,10 @@ import { Quote } from 'lucide-react'
 const teamMembers = [
   {
     id: 1,
-    name: 'Jean Dupont',
-    role: 'CEO & Fondateur',
+    name: 'TCHIAMA Paijos Clauva',
+    role: 'Administrateur Général',
     image: 'https://media.istockphoto.com/id/1469156417/fr/photo/un-dirigeant-dentreprise-souriant-dans-la-salle-du-conseil.jpg?s=612x612&w=0&k=20&c=UpFagjmx13LzXK99RCGGcwKYCv44tApMMzgaSnw2Nf0=',
-    bio: 'Jean est un entrepreneur passionné avec plus de 20 ans d’expérience dans le secteur du luxe. Avant de fonder Hermon Eximia, il a dirigé plusieurs entreprises prospères dans le domaine de la mode et de l’hôtellerie de luxe.'
+    bio: 'TCHIAMA Paijos Clauva est un leader visionnaire avec plus de 15 ans d\'expérience dans la gestion d\'entreprises de luxe. Avant de fonder Hermon Eximia, il a dirigé avec succès plusieurs entreprises internationales, apportant une expertise inégalée en stratégie et en excellence opérationnelle.'
   },
   {
     id: 2,
@@ -17,13 +17,7 @@ const teamMembers = [
     image: 'https://media.istockphoto.com/id/1469156417/fr/photo/un-dirigeant-dentreprise-souriant-dans-la-salle-du-conseil.jpg?s=612x612&w=0&k=20&c=UpFagjmx13LzXK99RCGGcwKYCv44tApMMzgaSnw2Nf0=',
     bio: 'Sophie est une créatrice visionnaire avec une expertise en design de produits de luxe. Elle a travaillé pour des maisons prestigieuses avant de rejoindre Hermon Eximia pour diriger la direction artistique de la marque.'
   },
-   {
-    id: 3,
-    name: 'Sophie Martin',
-    role: 'Directrice Artistique',
-    image: 'https://media.istockphoto.com/id/1469156417/fr/photo/un-dirigeant-dentreprise-souriant-dans-la-salle-du-conseil.jpg?s=612x612&w=0&k=20&c=UpFagjmx13LzXK99RCGGcwKYCv44tApMMzgaSnw2Nf0=',
-    bio: 'Sophie est une créatrice visionnaire avec une expertise en design de produits de luxe. Elle a travaillé pour des maisons prestigieuses avant de rejoindre Hermon Eximia pour diriger la direction artistique de la marque.'
-  },
+  
 ]
 
 export default function TeamGrid() {

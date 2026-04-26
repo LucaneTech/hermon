@@ -331,22 +331,22 @@ export default function Services() {
         {/* Image d'arrière-plan */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+            src="images/services.jpg"
             alt="Architecture d'excellence - piliers de la réussite"
             className="w-full h-full object-cover"
           />
         </div>
 
         {/* Overlay plus sombre pour la lisibilité */}
-         <div className="absolute inset-0 z-1"
-    style={{
-      background: isDark
-        ? 'radial-gradient(ellipse at 30% 50%, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 60%), radial-gradient(ellipse at 70% 50%, rgba(197,160,89,0.15) 0%, transparent 80%)'
-        : 'radial-gradient(ellipse at 30% 50%, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.45) 60%), radial-gradient(ellipse at 70% 50%, rgba(197,160,89,0.1) 0%, transparent 80%)',
-    }}
-  />
-    <div className="hero-glow w-[600px] h-[600px] top-4 left-2 bg-black opacity-40"   />
-   <div className="hero-glow w-[600px] h-[600px] top-[50%] left-4 bg-violet-950/20 opacity-80"   />
+        <div className="absolute inset-0 z-1"
+          style={{
+            background: isDark
+              ? 'radial-gradient(ellipse at 30% 50%, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 60%), radial-gradient(ellipse at 70% 50%, rgba(197,160,89,0.15) 0%, transparent 80%)'
+              : 'radial-gradient(ellipse at 30% 50%, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.45) 60%), radial-gradient(ellipse at 70% 50%, rgba(197,160,89,0.1) 0%, transparent 80%)',
+          }}
+        />
+        <div className="hero-glow w-[600px] h-[600px] top-4 left-2 bg-black opacity-40" />
+        <div className="hero-glow w-[600px] h-[600px] top-[50%] left-4 bg-violet-950/20 opacity-80" />
 
         <div className="relative z-10 max-w-5xl mx-auto">
           <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="section-label mb-6">
@@ -361,20 +361,20 @@ export default function Services() {
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 0.7 }} className="divider-gold mb-8" />
 
           {/* Bouton d'action */}
-         <NavLink to="/tarifs">
-           <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9, duration: 0.5 }}
-            className="btn-gold inline-flex items-center gap-2 px-8 py-3 rounded-md font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
-            
-          >
-            <span className='inline-flex items-center gap-1'>
-              Découvrir nos tarifs
-              <ArrowRight className='w-5 h-5'/>
-            </span>
-          </motion.button>
-         </NavLink>
+          <NavLink to="/tarifs">
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9, duration: 0.5 }}
+              className="btn-gold inline-flex items-center gap-2 px-8 py-3 rounded-md font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
+
+            >
+              <span className='inline-flex items-center gap-1'>
+                Découvrir nos tarifs
+                <ArrowRight className='w-5 h-5' />
+              </span>
+            </motion.button>
+          </NavLink>
         </div>
       </section>
 
