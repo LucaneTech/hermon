@@ -1,0 +1,19 @@
+{
+  "services": {
+    "hero": {
+      "label": "Une architecture complète au service de l'excellence",
+      "title1": "Les",
+      "title2": "5 Piliers",
+      "title3": "de l'Excellence EXIMIA",
+      "cta": "Découvrir nos tarifs"
+    },
+    
+    "overview": {
+      "label": "Vue Globale",
+      "title1": "Une",
+      "title2": "offre intégrale",
+        "title3": "pensée pour votre unicité",
+      "cta": "Demander un Devis Personnalisé"
+    }
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "about": {
+    "hero": {
+      "label": "Qui Sommes-Nous",
+      "title": {
+        "line1": "L'",
+        "line2": "Excellence Discrète",
+        "line3": "comme Philosophie"
+      },
+      "description": "HERMON EXIMIA n'est pas une conciergerie standard. Nous sommes le partenaire de l'efficacité directionnelle — l'architecte du temps libéré des leaders qui façonnent demain."
+    },
+    "story": {
+      "label": "Notre Histoire",
+      "title": {
+        "line1": "Née d'un constat,",
+        "line2": "forgée par l'exigence"
+      },
+      "timeline": [
+        {
+          "year": "Genèse",
+          "text": "HERMON EXIMIA naît d'un constat implacable : les dirigeants africains les plus brillants perdent des heures précieuses sur des tâches qui ne méritent pas leur attention."
+        },
+        {
+          "year": "Vision",
+          "text": "Créer le premier service de conciergerie multi-domaine premium au Congo, capable de rivaliser avec les standards des grandes maisons européennes."
+        },
+        {
+          "year": "Mission",
+          "text": "Libérer chaque dirigeant, cadre et talent de tout ce qui l'empêche de réaliser pleinement son potentiel, tant professionnel que personnel."
+        },
+        {
+          "year": "Promesse",
+          "text": "Chaque client EXIMIA bénéficie d'un interlocuteur unique, formé à l'excellence, dédié à sa réussite globale et disponible à tout moment."
+        }
+      ]
+    },
+    "positioning": {
+      "label": "Notre Positionnement",
+      "notText": "Nous ne sommes pas :",
+      "isText": "Nous sommes :",
+      "not": [
+        "Une conciergerie standard",
+        "Un simple service d'assistance",
+        "Un prestataire parmi d'autres"
+      ],
+      "is": [
+        "Le partenaire de l'efficacité directionnelle",
+        "Le garant de la sérénité des décideurs",
+        "L'architecte du temps libéré"
+      ],
+      "signature": {
+        "role": "Responsable de département de développement statistique de la conciergerie",
+        "name": "Mme MOUSSOKI MASSAMBA JESSICA DEO-GRACIAS",
+        "location": "Pointe-Noire, République du Congo"
+      }
+    },
+    "team": {
+      "header": {
+        "label": "Notre Équipe",
+        "title": {
+          "line1": "L'expertise au service de votre",
+          "highlight": "réussite"
+        },
+        "description": "Une équipe dirigeante engagée, unie par une même exigence d'excellence et de discrétion."
+      },
+
+      "members": [
+        {
+          "id": 1,
+          "name": "TCHIAMA Paijos Clauva",
+          "role": "Administrateur Général",
+          "bio": "TCHIAMA Paijos Clauva est un leader visionnaire avec plus de 15 ans d'expérience dans la gestion d'entreprises de luxe. Avant de fonder Hermon Eximia, il a dirigé avec succès plusieurs entreprises internationales, apportant une expertise inégalée en stratégie et en excellence opérationnelle."
+        },
+        {
+          "id": 2,
+          "name": "Sophie Martin",
+          "role": "Directrice Artistique",
+          "bio": "Sophie est une créatrice visionnaire avec une expertise en design de produits de luxe. Elle a travaillé pour des maisons prestigieuses avant de rejoindre Hermon Eximia pour diriger la direction artistique de la marque."
+        }
+      ]
+    },
+
+    "principles": {
+      "label": "Ce qui nous guide",
+      "title": "Nos Principes Fondateurs",
+      "items": [
+        {
+          "title": "Confidentialité Absolue",
+          "desc": "Ce que nous savons de vous reste entre nous. Clause de confidentialité renforcée, inscrite dans chaque contrat, sans exception."
+        },
+        {
+          "title": "Disponibilité Permanente",
+          "desc": "Nos clients sont prioritaires 24 heures sur 24, 7 jours sur 7, 365 jours par an. La notion de \"hors horaires\" n'existe pas pour nous."
+        },
+        {
+          "title": "Discrétion Royale",
+          "desc": "Notre travail se reflète dans votre sérénité, jamais dans notre présence. Nous sommes le silence qui vous protège."
+        },
+        {
+          "title": "Adaptation Constante",
+          "desc": "Nous évoluons avec vous et pour vous. Vos changements de vie deviennent immédiatement nos priorités, sans délai ni friction."
+        }
+      ]
+    },
+    "offer": {
+      "label": "Au-Delà des Prestations",
+      "title1": "Ce que nous ",
+      "title2": "vendons vraiment",
+      "items": [
+        {
+          "offer": "La Tranquillité",
+          "meaning": "L'absence totale de préoccupation logistique"
+        },
+        {
+          "offer": "L'Efficacité",
+          "meaning": "Chaque minute réinvestie dans l'essentiel"
+        },
+        {
+          "offer": "La Liberté",
+          "meaning": "La capacité de se concentrer sans entrave"
+        },
+        {
+          "offer": "La Dignité",
+          "meaning": "Un accompagnement discret et irréprochable"
+        },
+        {
+          "offer": "Le Temps",
+          "meaning": "La ressource la plus rare et la plus précieuse"
+        }
+      ]
+    },
+    "cta": {
+      "label": "Prêt à franchir le seuil ?",
+      "title": {
+        "line1": "Votre première consultation",
+        "line2": "est offerte."
+      },
+      "button": "Prendre Rendez-Vous"
+    }
+  }
+}

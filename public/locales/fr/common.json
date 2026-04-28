@@ -1,0 +1,48 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "cibles": "Cibles",
+    "services": "Services",
+    "tarifs": "Tarifs",
+    "contact": "Contact"
+  },
+  "language": {
+    "fr": "Français",
+    "en": "English"
+  },
+  "cta": {
+    "contact": "Diagnostic Gratuit (2h)",
+    "services": "Découvrir nos Services"
+  },
+  "footer": {
+    "bandLabel": "Prêt à franchir le seuil de l'excellence ?",
+    "bandTitle": "Libérez votre temps.",
+    "bandButton": "Initier la Conversation",
+    "brandTagline": "L'art de libérer le temps des leaders",
+    "discreteExcellence": "Excellence Discrète",
+    "contactTitle": "Contact Direct",
+    "copyright": "© 2026 HERMON EXIMIA. Tous droits réservés."
+  },
+  "pillars": [
+    "Excellence Événementielle",
+    "Mobilité Intelligente",
+    "Fiabilité Totale",
+    "Réactivité Absolue",
+    "Sur-Mesure Personnel"
+  ],
+  "contact": {
+    "phone": "+242 06 186 36 05\n+242 05 386 24 16",
+    "email": "contact@hermon-eximia.com",
+    "location": "Pointe-Noire\nRépublique du Congo"
+  },
+  "loader": {
+    "brand": "HERMON EXIMIA",
+    "tagline": "Conciergerie Multi-Domaine Premium"
+  }
+  ,
+  "loaderUI": {
+    "initLabel": "Initialisation",
+    "bottomTagline": "L'élévation exceptionnelle de la qualité de vie au travail"
+  }
+}

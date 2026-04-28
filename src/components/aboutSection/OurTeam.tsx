@@ -1,38 +1,42 @@
 import { motion } from 'framer-motion'
 import SectionReveal from '../SectionReveal'
 import { Quote } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
-const teamMembers = [
+
+
+export default function TeamGrid() {
+  const { t } = useTranslation('about')
+
+  const teamMembers = [
   {
-    id: 1,
-    name: 'TCHIAMA Paijos Clauva',
-    role: 'Administrateur Général',
+    id: t('about.team.members.0.id'),
+    name: t('about.team.members.0.name'),
+    role: t('about.team.members.0.role'),
     image: 'https://media.istockphoto.com/id/1469156417/fr/photo/un-dirigeant-dentreprise-souriant-dans-la-salle-du-conseil.jpg?s=612x612&w=0&k=20&c=UpFagjmx13LzXK99RCGGcwKYCv44tApMMzgaSnw2Nf0=',
-    bio: 'TCHIAMA Paijos Clauva est un leader visionnaire avec plus de 15 ans d\'expérience dans la gestion d\'entreprises de luxe. Avant de fonder Hermon Eximia, il a dirigé avec succès plusieurs entreprises internationales, apportant une expertise inégalée en stratégie et en excellence opérationnelle.'
+    bio: t('about.team.members.0.bio')
   },
   {
-    id: 2,
-    name: 'Sophie Martin',
-    role: 'Directrice Artistique',
+    id: t('about.team.members.1.id'),
+    name: t('about.team.members.1.name'),
+    role: t('about.team.members.1.role'),
     image: 'https://media.istockphoto.com/id/1469156417/fr/photo/un-dirigeant-dentreprise-souriant-dans-la-salle-du-conseil.jpg?s=612x612&w=0&k=20&c=UpFagjmx13LzXK99RCGGcwKYCv44tApMMzgaSnw2Nf0=',
-    bio: 'Sophie est une créatrice visionnaire avec une expertise en design de produits de luxe. Elle a travaillé pour des maisons prestigieuses avant de rejoindre Hermon Eximia pour diriger la direction artistique de la marque.'
+    bio: t('about.team.members.1.bio')
   },
   
 ]
-
-export default function TeamGrid() {
   return (
     <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8" style={{ background: '#080808' }}>
       <div className="max-w-7xl mx-auto">
 
         {/* ─── HEADER ───────────────── */}
         <SectionReveal className="text-center mb-12 sm:mb-16">
-          <p className="section-label mb-3 sm:mb-4 text-xs sm:text-sm">Notre Équipe</p>
+          <p className="section-label mb-3 sm:mb-4 text-xs sm:text-sm">{t('about.team.header.label')}</p>
           <h2 className="section-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl px-4">
-            L'expertise au service de votre <em className="block sm:inline">réussite</em>
+            {t('about.team.header.title.line1')} <em className="block sm:inline">{t('about.team.header.title.highlight')}</em>
           </h2>
           <p className="font-body text-xs sm:text-sm mt-4 sm:mt-6 max-w-xl mx-auto px-4" style={{ color: 'var(--text-secondary)' }}>
-            Une équipe dirigeante engagée, unie par une même exigence d'excellence et de discrétion.
+            {t('about.team.header.description')}
           </p>
         </SectionReveal>
 

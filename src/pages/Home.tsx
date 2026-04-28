@@ -5,67 +5,78 @@ import PageTransition from '../components/PageTransition'
 import SectionReveal from '../components/SectionReveal'
 import { useTheme } from '../hooks/useTheme'
 import { image } from 'framer-motion/client'
+import { useTranslation } from 'react-i18next'
+
+
+// const stats = [
+//   { number: '24/7', label: 'Disponibilité permanente' },
+//   { number: '5', label: 'Piliers de services' },
+//   { number: '3', label: 'Offres sur-mesure' },
+//   { number: '1h', label: "Délai d'intervention d'urgence" },
+// ]
+
+
+
+export default function Home() {
+  const { isDark } = useTheme()
+  const { t } = useTranslation('home')
+
+
+  const pillars = [
+  {
+    num: t('home.pillars.0.num'),
+    title: t('home.pillars.0.title'),
+    tag: t('home.pillars.0.tag'),
+    image: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=800', // table dressée, bouquet, verres
+  },
+  {
+    num: t('home.pillars.1.num'),
+    title: t('home.pillars.1.title'),
+    tag: t('home.pillars.1.tag'),
+    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800', // voiture premium avec chauffeur côté aéroport
+  },
+  {
+    num: t('home.pillars.2.num'),
+
+    title: t('home.pillars.2.title'),
+    tag: t('home.pillars.2.tag'),
+    image: 'https://images.unsplash.com/photo-1551836022-deb4988cc6c0?auto=format&fit=crop&q=80&w=800', // poignée de main confiante, style corporate
+  },
+  {
+    num: t('home.pillars.3.num'),
+    title: t('home.pillars.3.title'),
+    tag: t('home.pillars.3.tag'),
+    image: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&q=80&w=800', // planning / calendrier / action rapide
+  },
+  {
+    num: t('home.pillars.4.num'),
+    title: t('home.pillars.4.title'),
+    tag: t('home.pillars.4.tag'),
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800', // portrait élégant, attention personnalisée
+  },
+  
+]
+
+
 
 const values = [
   {
     icon: Shield,
-    label: 'Confidentialité Absolue',
-    desc: `Clause renforcée dans chaque contrat. Vos informations restent strictement confidentielles.`,
+    label: t('home.values.0.label'),
+    desc: t('home.values.0.desc'),
   },
   {
     icon: Clock,
-    label: 'Disponibilité 24/7/365',
-    desc: `Nos clients sont prioritaires à chaque instant, sans exception.`,
+    label: t('home.values.1.label'),
+
+    desc: t('home.values.1.desc'),
   },
   {
     icon: Star,
-    label: 'Exigence Irréprochable',
-    desc: `Nous ne proposons que l'excellence. Aucun compromis, jamais.`,
+    label: t('home.values.2.label'),
+    desc: t('home.values.2.desc'),
   },
 ]
-
-const stats = [
-  { number: '24/7', label: 'Disponibilité permanente' },
-  { number: '5', label: 'Piliers de services' },
-  { number: '3', label: 'Offres sur-mesure' },
-  { number: '1h', label: "Délai d'intervention d'urgence" },
-]
-
-const pillars = [
-  {
-    num: '01',
-    title: 'Excellence Événementielle',
-    tag: "L'art de recevoir dignement",
-    image: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=800', // table dressée, bouquet, verres
-  },
-  {
-    num: '02',
-    title: 'Mobilité Intelligente',
-    tag: 'Voyager sans jamais être déplacé',
-    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800', // voiture premium avec chauffeur côté aéroport
-  },
-  {
-    num: '03',
-    title: 'Fiabilité Totale',
-    tag: 'Des partenaires dignes de confiance',
-    image: 'https://images.unsplash.com/photo-1551836022-deb4988cc6c0?auto=format&fit=crop&q=80&w=800', // poignée de main confiante, style corporate
-  },
-  {
-    num: '04',
-    title: 'Réactivité Absolue',
-    tag: "L'administration au service de l'action",
-    image: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&q=80&w=800', // planning / calendrier / action rapide
-  },
-  {
-    num: '05',
-    title: 'Sur-Mesure Personnel',
-    tag: "Le dirigeant d'abord, la personne ensuite",
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800', // portrait élégant, attention personnalisée
-  },
-]
-
-export default function Home() {
-  const { isDark } = useTheme()
 
   return (
     <PageTransition>
@@ -225,7 +236,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            <p className="section-label mb-8">Conciergerie Multi-Domaine Premium</p>
+            <p className="section-label mb-8">{t('home.premiumLabel')}</p>
           </motion.div>
 
           {/* H1 - Animation séquentielle fluide par ligne */}
@@ -239,7 +250,7 @@ export default function Home() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             >
-              L'Art de
+              {t('home.h1.line1')}
             </motion.div>
 
             {/* Ligne 2 - Version dorée avec léger scale */}
@@ -248,7 +259,7 @@ export default function Home() {
               animate={{ y: 0, opacity: 1, scale: 1 }}
               transition={{ delay: 0.6, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             >
-              <em style={{ color: '#C5A059', fontStyle: 'italic' }}>Libérer le Temps</em>
+              <em style={{ color: '#C5A059', fontStyle: 'italic' }}>{t('home.h1.line2')}</em>
             </motion.div>
 
             {/* Ligne 3 */}
@@ -257,7 +268,7 @@ export default function Home() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             >
-              des Leaders
+              {t('home.h1.line3')}
             </motion.div>
           </div>
 
@@ -278,15 +289,14 @@ export default function Home() {
             className="font-body text-lg mx-auto mb-12 leading-relaxed"
             style={{ color: 'rgba(240,237,232,0.65)', maxWidth: '580px' }}
           >
-            HERMON EXIMIA prend en charge tout ce qui vous empêche de décider.
-            Vous arrivez, vous présidez, vous repartez.{' '}
+            {t('home.description')}{' '}
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.5, duration: 0.8 }}
               style={{ color: '#C5A059' }}
             >
-              Tout le reste est notre affaire.
+              {t('home.descriptionHighlight')}
             </motion.span>
           </motion.p>
 
@@ -317,7 +327,7 @@ export default function Home() {
                 whileTap={{ scale: 0.97 }}
                 className="btn-gold"
               >
-                Diagnostic Gratuit (2h)
+                {t('home.cta.contact')}
                 <ArrowRight size={14} />
               </motion.button>
             </NavLink>
@@ -334,7 +344,7 @@ export default function Home() {
                 className="font-heading text-xs tracking-[0.2em] uppercase py-3 px-8 transition-colors duration-300 animated-link rounded-md"
                 style={{ color: 'rgba(240,237,232,0.6)', border: '1px solid rgba(240,237,232,0.15)' }}
               >
-                Découvrir nos Services
+                {t('home.cta.services')}
               </motion.button>
             </NavLink>
           </motion.div>
@@ -351,7 +361,12 @@ export default function Home() {
         }}
       >
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0">
-          {stats.map((stat, i) => (
+          {[
+            { number: t('home.stats.0.number'), label: t('home.stats.0.label') },
+            { number: t('home.stats.1.number'), label: t('home.stats.1.label') },
+            { number: t('home.stats.2.number'), label: t('home.stats.2.label') },
+            { number: t('home.stats.3.number'), label: t('home.stats.3.label') },
+          ].map((stat, i) => (
             <SectionReveal key={stat.label} delay={i * 0.1}>
               <div className={`text-center ${i < 3 ? 'md:border-r' : ''}`} style={{ borderColor: 'rgba(197,160,89,0.1)' }}>
                 <div className="counter-number">{stat.number}</div>
@@ -369,22 +384,20 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <SectionReveal direction="left">
-              <p className="section-label mb-4">Notre Philosophie</p>
+              <p className="section-label mb-4">{t('home.philosophy.label')}</p>
               <h2 className="section-title mb-8">
-                Nous ne vendons pas<br />
-                des services.<br />
-                <em>Nous offrons la liberté.</em>
+                {t('home.philosophy.title1')}<br />
+                {t('home.philosophy.title2')}<br />
+                <em>{t('home.philosophy.title3')}</em>
               </h2>
               <p className="font-body text-base leading-relaxed mb-8" style={{ color: 'var(--text-secondary)' }}>
-                HERMON EXIMIA est née d'un constat fondamental : l'attention des dirigeants est constamment fragmentée.
-                Entre sollicitations internes, imprévus logistiques et tâches administratives, le temps consacré à la réflexion
-                stratégique se réduit dangereusement.
+                {t('home.philosophy.description')}
               </p>
 
 
               <NavLink to="/a-propos">
                 <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="btn-gold">
-                  Notre Vision
+                  {t('home.philosophy.cta')}
                   <ArrowRight size={14} />
                 </motion.button>
               </NavLink>
@@ -394,24 +407,24 @@ export default function Home() {
               <div className="space-y-4">
                 {[
                   {
-                    label: 'La Tranquillité',
-                    desc: `L'absence totale de préoccupation logistique`,
+                    label: t('home.freedoms.0.label'),
+                    desc: t('home.freedoms.0.desc'),
                   },
                   {
-                    label: "L'Efficacité",
-                    desc: `Chaque minute réinvestie dans l'essentiel stratégique`,
+                    label: t('home.freedoms.1.label'),
+                    desc: t('home.freedoms.1.desc'),
                   },
                   {
-                    label: 'La Liberté',
-                    desc: `La capacité de se concentrer sans entrave`,
+                    label: t('home.freedoms.2.label'),
+                    desc: t('home.freedoms.2.desc'),
                   },
                   {
-                    label: 'La Dignité',
-                    desc: `Un accompagnement discret et irréprochable`,
+                    label: t('home.freedoms.3.label'),
+                    desc: t('home.freedoms.3.desc'),
                   },
                   {
-                    label: 'Le Temps',
-                    desc: `La ressource la plus rare et la plus précieuse`,
+                    label: t('home.freedoms.4.label'),
+                    desc: t('home.freedoms.4.desc'),
                   },
                 ].map((item, i) => (
                   <SectionReveal key={item.label} delay={i * 0.1}>
@@ -436,9 +449,9 @@ export default function Home() {
       <section className="py-24 px-6" style={{ background: isDark ? '#080808' : '#f5f2ee' }}>
         <div className="max-w-7xl mx-auto">
           <SectionReveal className="text-center mb-20">
-            <p className="section-label mb-4">Une architecture complète</p>
+            <p className="section-label mb-4">{t('home.pillarsSection.label')}</p>
             <h2 className="section-title">
-              Les <em>5 Piliers</em> de l'Excellence
+              {t('home.pillarsSection.title1')} <em>{t('home.pillarsSection.title2')}</em> {t('home.pillarsSection.title3')}
             </h2>
           </SectionReveal>
 
@@ -512,7 +525,7 @@ export default function Home() {
           <SectionReveal className="text-center mt-16">
             <NavLink to="/services">
               <motion.button whileHover={{ scale: 1.02 }} className="btn-gold">
-                Explorer tous nos Services
+                {t('home.pillarsSection.cta')}
                 <ArrowRight size={14} />
               </motion.button>
             </NavLink>
@@ -524,9 +537,10 @@ export default function Home() {
       <section className="py-32 px-6">
         <div className="max-w-7xl mx-auto">
           <SectionReveal className="text-center mb-20">
-            <p className="section-label mb-4">Notre Engagement Dignitaire</p>
-            <h2 className="section-title">
-              Principes qui nous<br /><em>définissent</em>
+                <p className="section-label mb-4">{t('home.valuesSection.label')}</p>
+                <h2 className="section-title">
+              {t('home.valuesSection.title1')}<br />
+              <em>{t('home.valuesSection.title2')}  </em>
             </h2>
           </SectionReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -557,20 +571,20 @@ export default function Home() {
         <div className="relative z-10 text-center max-w-4xl mx-auto">
           <SectionReveal>
             <div className="gold-line justify-center mb-8">
-              <span className="section-label">Message Clé</span>
+              <span className="section-label">{t('home.finalMessage.label')}</span>
             </div>
             <blockquote
               className="font-display mb-12"
               style={{ fontSize: 'clamp(1.8rem, 4vw, 3.5rem)', fontWeight: 300, lineHeight: 1.2, color: 'var(--text-primary)' }}
             >
-              "EXIMIA S'OCCUPE DE<br />
-              <em style={{ color: '#C5A059' }}>TOUT CE QUI FAIT<br />PERDRE DU TEMPS</em><br />
-              AUX DIRIGEANTS."
+              {t('home.finalMessage.line1')}<br />
+              <em style={{ color: '#C5A059' }}>{t('home.finalMessage.line2')}</em><br />
+              {t('home.finalMessage.line3')}
             </blockquote>
             <div className="divider-gold mx-auto mb-10" />
             <NavLink to="/contact">
               <motion.button whileHover={{ scale: 1.02 }} className="btn-gold">
-                Initier votre Transformation
+                {t('home.finalMessage.cta')}
                 <ArrowRight size={14} />
               </motion.button>
             </NavLink>

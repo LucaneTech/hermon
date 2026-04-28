@@ -1,0 +1,116 @@
+{
+  "hero": {
+    "label": "Our Support Architectures",
+    "title1": "Designed for those",
+    "title2": "who have no time",
+    "title3": "to lose",
+    "description": "Three levels of support, precisely calibrated to match the realities and ambitions of every excellence profile.",
+    "cta": "Discover our pricing"
+  },
+  "targets": [
+    {
+      "id": "strategique",
+      "num": "01",
+      "title": "Strategic Category",
+      "subtitle": "Leaders · Executive Committee · Shareholders · Partners",
+      "reality": "Ultra-critical time, intertwined professional and personal life, maximum exposure to operational distractions. Every lost hour is a abandoned strategic decision.",
+      "offer": "Unique Senior Contact, 24/7 · 365 days/year availability, unlimited support (family, professional, diplomatic, asset management).",
+      "gain": "Total mental liberation. You no longer manage anything — you decide. You no longer coordinate — you lead.",
+      "services": [
+        "24/7/365 assistance",
+        "Complete private agenda",
+        "Full VIP protocol",
+        "Physical accompaniment",
+        "Absolute confidentiality"
+      ]
+    },
+    {
+      "id": "operationnelle",
+      "num": "02",
+      "title": "Operational Category",
+      "subtitle": "Senior Executives · Managers · High-level Experts",
+      "reality": "Constant mobility, on-the-ground emergency management, need for immediate responsiveness. Performance is hindered by logistical friction, not by skills.",
+      "offer": "Priority assistance 6am–10pm, 7/7 — complete travel management, urgent administrative support, routine personal tasks, dedicated hotline.",
+      "gain": "Absolute fluidity of movement. Regain up to 15 hours of productivity per week, reinvested in your professional excellence.",
+      "services": [
+        "Availability 6am–10pm",
+        "Travel management",
+        "Administrative support",
+        "Personal tasks",
+        "Priority hotline"
+      ]
+    },
+    {
+      "id": "talent",
+      "num": "03",
+      "title": "Talent Category",
+      "subtitle": "Executives · Strategic Employees · Exceptional Young Talents",
+      "reality": "Maximum ambition, but held back by time-consuming daily tasks — errands, admin, personal organization. The potential is there. The time is missing.",
+      "offer": "Premium essential services on business days 8am–8pm: errands, dry cleaning, routine admin, personal organization, dedicated digital platform.",
+      "gain": "Total focus on skill development and value creation. Increased retention of top profiles within your organization.",
+      "services": [
+        "Business days 8am–8pm",
+        "Daily services",
+        "Routine admin",
+        "Personal organization",
+        "Digital platform"
+      ]
+    }
+  ],
+  "sections": {
+    "reality": "On-the-ground reality",
+    "ourOffer": "Our Offer",
+    "yourGain": "Your Gain"
+  },
+  "comparison": {
+    "title": "Comparative View",
+    "subtitle": "Find your <em>excellence level</em>",
+    "headers": {
+      "service": "Service",
+      "strategic": "Strategic",
+      "operational": "Operational",
+      "talent": "Talent"
+    },
+    "rows": {
+      "availability": "Availability",
+      "interlocutor": "Contact Person",
+      "privateAgenda": "Private Agenda",
+      "physicalSupport": "Physical Support",
+      "adminSupport": "Admin Support",
+      "emergency": "Emergency 1h"
+    },
+    "values": {
+      "availability": {
+        "strategic": "24/7/365",
+        "operational": "6am–10pm · 7/7",
+        "talent": "8am–8pm Business"
+      },
+      "interlocutor": {
+        "strategic": "Senior Dedicated",
+        "operational": "Dedicated Expert",
+        "talent": "Assigned Advisor"
+      },
+      "privateAgenda": {
+        "strategic": "✓ Complete",
+        "operational": "✓ Partial",
+        "talent": "–"
+      },
+      "physicalSupport": {
+        "strategic": "✓ Included",
+        "operational": "On request",
+        "talent": "–"
+      },
+      "adminSupport": {
+        "strategic": "✓ Unlimited",
+        "operational": "✓ Priority",
+        "talent": "✓ Essential"
+      },
+      "emergency": {
+        "strategic": "✓",
+        "operational": "✓",
+        "talent": "Business days"
+      }
+    },
+    "cta": "View Pricing"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "label": "Initier la Transformation",
+    "title": "Votre prochaine décision<br />commence <em>ici</em>"
+  },
+  "sidebar": {
+    "diagnostic": {
+      "label": "Offre exclusive",
+      "title": "Diagnostic Offert",
+      "description": "Une séance d'audit de <strong>2 heures</strong> pour identifier les sources d'éparpillement dans votre organisation personnelle et professionnelle.",
+      "footer": "Sans engagement · Confidentiel · Sur invitation"
+    },
+    "contactDirect": "Contact Direct",
+    "phone": "Téléphone",
+    "email": "Email",
+    "location": "Localisation",
+    "pointeNoire": "Pointe-Noire<br />République du Congo",
+    "responseTime": {
+      "title": "Délai de Réponse",
+      "description": "Nous accusons réception sous <strong>2 heures ouvrées</strong>. Urgence ? Appelez directement."
+    }
+  },
+  "form": {
+    "title": "Formulaire de Contact",
+    "subtitle": "Toutes les informations transmises sont couvertes par notre charte de confidentialité.",
+    "success": "Message envoyé avec succès. Nous vous recontactons sous 2h ouvrées.",
+    "error": "Une erreur est survenue. Veuillez nous contacter directement par téléphone.",
+    "fields": {
+      "fullName": "Nom & Prénom *",
+      "fullNamePlaceholder": "Jean Dupont",
+      "company": "Entreprise / Organisation",
+      "companyPlaceholder": "Votre société",
+      "email": "Email Professionnel *",
+      "emailPlaceholder": "jean@entreprise.com",
+      "phone": "Téléphone",
+      "phonePlaceholder": "+242 06 XXX XX XX",
+      "category": "Catégorie Concernée *",
+      "categoryOptions": {
+        "strategic": "Stratégique — Dirigeants",
+        "operational": "Opérationnelle — Cadres",
+        "talent": "Talent — Collaborateurs",
+        "group": "Offre Groupe — Entreprise"
+      },
+      "subject": "Objet *",
+      "subjectOptions": {
+        "diagnostic": "Diagnostic Offert (2h)",
+        "quote": "Demande de Devis",
+        "partnership": "Partenariat Stratégique",
+        "info": "Demande d'Information"
+      },
+      "message": "Votre Message *",
+      "messagePlaceholder": "Comment pouvons-nous libérer votre temps et élever votre quotidien ?",
+      "privacyNote": "* Champs requis. Vos données sont protégées par notre charte de confidentialité. Aucune information ne sera partagée sans votre consentement explicite."
+    },
+    "submit": {
+      "sending": "Envoi en cours...",
+      "default": "Envoyer ma Demande"
+    }
+  },
+  "map": {
+    "location": "Pointe-Noire, République du Congo",
+    "description": "Nous nous déplaçons chez vous sur rendez-vous confirmé."
+  }
+}

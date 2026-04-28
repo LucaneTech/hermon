@@ -1,0 +1,108 @@
+{
+  "home": {
+    "premiumLabel": "Conciergerie Multi-Domaine Premium",
+
+    "h1": {
+      "line1": "L'Art de",
+      "line2": "Libérer le Temps",
+      "line3": "des Leaders"
+    },
+
+    "description": "HERMON EXIMIA prend en charge tout ce qui vous empêche de décider.",
+    "descriptionHighlight": "Tout le reste est notre affaire.",
+
+    "cta": {
+      "contact": "Diagnostic Gratuit (2h)",
+      "services": "Découvrir nos Services"
+    },
+
+    "stats": [
+      { "number": "24/7", "label": "Disponibilité permanente" },
+      { "number": "5", "label": "Piliers de services" },
+      { "number": "3", "label": "Offres sur-mesure" },
+      { "number": "1h", "label": "Délai d'intervention d'urgence" }
+    ],
+
+    "philosophy": {
+      "label": "Notre Philosophie",
+      "title1": "Nous ne vendons pas",
+      "title2": "des services.",
+      "title3": "Nous offrons la liberté.",
+      "description": "HERMON EXIMIA est née d'un constat fondamental : l'attention des dirigeants est constamment fragmentée. Entre sollicitations internes, imprévus logistiques et tâches administratives, le temps consacré à la réflexion stratégique se réduit dangereusement.",
+      "cta": "Notre Vision"
+    },
+
+    "freedoms": [
+      { "label": "La Tranquillité", "desc": "L'absence totale de préoccupation logistique" },
+      { "label": "L'Efficacité", "desc": "Chaque minute réinvestie dans l'essentiel stratégique" },
+      { "label": "La Liberté", "desc": "La capacité de se concentrer sans entrave" },
+      { "label": "La Dignité", "desc": "Un accompagnement discret et irréprochable" },
+      { "label": "Le Temps", "desc": "La ressource la plus rare et la plus précieuse" }
+    ],
+
+    "pillarsSection": {
+      "label": "Une architecture complète",
+      "title1": "Les",
+      "title2": "5 Piliers",
+      "title3": "de l'Excellence",
+      "cta": "Explorer tous nos Services"
+    },
+
+    "pillars": [
+      {
+        "num": "01",
+        "title": "Excellence Événementielle",
+        "tag": "L'art de recevoir dignement"
+      },
+      {
+        "num": "02",
+        "title": "Mobilité Intelligente",
+        "tag": "Voyager sans jamais être déplacé"
+      },
+      {
+        "num": "03",
+        "title": "Fiabilité Totale",
+        "tag": "Des partenaires dignes de confiance"
+      },
+      {
+        "num": "04",
+        "title": "Réactivité Absolue",
+        "tag": "L'administration au service de l'action"
+      },
+      {
+        "num": "05",
+        "title": "Sur-Mesure Personnel",
+        "tag": "Le dirigeant d'abord, la personne ensuite"
+      }
+    ],
+
+    "valuesSection": {
+      "label": "Notre Engagement Dignitaire",
+      "title1": "Principes qui nous ",
+      "title2": "définissent"
+    },
+
+    "values": [
+      {
+        "label": "Confidentialité Absolue",
+        "desc": "Clause renforcée dans chaque contrat. Vos informations restent strictement confidentielles."
+      },
+      {
+        "label": "Disponibilité 24/7/365",
+        "desc": "Nos clients sont prioritaires à chaque instant, sans exception."
+      },
+      {
+        "label": "Exigence Irréprochable",
+        "desc": "Nous ne proposons que l'excellence. Aucun compromis, jamais."
+      }
+    ],
+
+    "finalMessage": {
+      "label": "Message Clé",
+      "line1": "EXIMIA S'OCCUPE DE",
+      "line2": "TOUT CE QUI FAIT PERDRE DU TEMPS",
+      "line3": "AUX DIRIGEANTS.",
+      "cta": "Initier votre Transformation"
+    }
+  }
+}

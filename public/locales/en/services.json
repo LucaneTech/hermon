@@ -1,0 +1,18 @@
+{
+    "services": {
+        "hero": {
+            "label": "A complete architecture serving excellence",
+            "title1": "The ",
+            "title2": "5 Pillars of ",
+            "title3": "EXIMIA Excellence",
+            "cta": "Discover our pricing"
+        },
+        "overview": {
+            "label": "Overview",
+            "title1": "A ",
+            "title2": "complete offering",
+            "title3": "designed for your uniqueness",
+            "cta": "Request a custom quote"
+        }
+    }
+}

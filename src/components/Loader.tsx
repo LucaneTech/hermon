@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 interface LoaderProps {
   onComplete: () => void
@@ -8,6 +9,7 @@ interface LoaderProps {
 export default function Loader({ onComplete }: LoaderProps) {
   const [progress, setProgress] = useState(0)
   const [phase, setPhase] = useState<'loading' | 'reveal' | 'exit'>('loading')
+  const { t } = useTranslation('common')
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -84,13 +86,13 @@ export default function Loader({ onComplete }: LoaderProps) {
                 className="font-heading text-2xl tracking-[0.5em] mb-2"
                 style={{ color: '#C5A059', fontWeight: 300 }}
               >
-                HERMON EXIMIA
+                {t('loader.brand')}
               </h1>
               <p
                 className="font-body text-xs tracking-[0.3em] uppercase"
                 style={{ color: 'rgba(197, 160, 89, 0.5)' }}
               >
-                Conciergerie Multi-Domaine
+                {t('loader.tagline')}
               </p>
             </motion.div>
 
@@ -111,7 +113,7 @@ export default function Loader({ onComplete }: LoaderProps) {
                   className="font-heading text-xs"
                   style={{ color: 'rgba(197, 160, 89, 0.4)', letterSpacing: '0.2em' }}
                 >
-                  Initialisation
+                  {t('loaderUI.initLabel')}
                 </span>
                 <span
                   className="font-heading text-xs"
@@ -131,7 +133,7 @@ export default function Loader({ onComplete }: LoaderProps) {
             className="absolute bottom-12 font-display text-sm italic"
             style={{ color: '#C5A059', letterSpacing: '0.15em' }}
           >
-            « L'élévation exceptionnelle de la qualité de vie au travail »
+            {t('loaderUI.bottomTagline')}
           </motion.p>
         </motion.div>
       )}

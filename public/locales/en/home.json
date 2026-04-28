@@ -1,0 +1,108 @@
+{
+  "home": {
+    "premiumLabel": "Premium Multi-Domain Concierge",
+
+    "h1": {
+      "line1": "The Art of",
+      "line2": "Freeing Time",
+      "line3": "for Leaders"
+    },
+
+    "description": "HERMON EXIMIA handles everything that prevents you from making decisions.",
+    "descriptionHighlight": "Everything else is our responsibility.",
+
+    "cta": {
+      "contact": "Free Diagnosis (2h)",
+      "services": "Explore Our Services"
+    },
+
+    "stats": [
+      { "number": "24/7", "label": "Permanent availability" },
+      { "number": "5", "label": "Service pillars" },
+      { "number": "3", "label": "Tailored offers" },
+      { "number": "1h", "label": "Emergency response time" }
+    ],
+
+    "philosophy": {
+      "label": "Our Philosophy",
+      "title1": "We do not sell",
+      "title2": "services.",
+      "title3": "We deliver freedom.",
+      "description": "HERMON EXIMIA was born from a fundamental observation: leaders' attention is constantly fragmented. Between internal demands, logistical issues, and administrative tasks, time for strategic thinking is drastically reduced.",
+      "cta": "Our Vision"
+    },
+
+    "freedoms": [
+      { "label": "Peace of Mind", "desc": "Total absence of logistical concerns" },
+      { "label": "Efficiency", "desc": "Every minute reinvested into strategic priorities" },
+      { "label": "Freedom", "desc": "The ability to focus without constraints" },
+      { "label": "Dignity", "desc": "Discreet and flawless support" },
+      { "label": "Time", "desc": "The rarest and most valuable resource" }
+    ],
+
+    "pillarsSection": {
+      "label": "A complete architecture",
+      "title1": "The",
+      "title2": "5 Pillars",
+      "title3": "of Excellence",
+      "cta": "Explore all Services"
+    },
+
+    "pillars": [
+      {
+        "num": "01",
+        "title": "Event Excellence",
+        "tag": "The art of hosting with distinction"
+      },
+      {
+        "num": "02",
+        "title": "Smart Mobility",
+        "tag": "Travel without disruption"
+      },
+      {
+        "num": "03",
+        "title": "Total Reliability",
+        "tag": "Trusted partners only"
+      },
+      {
+        "num": "04",
+        "title": "Absolute Reactivity",
+        "tag": "Administration serving action"
+      },
+      {
+        "num": "05",
+        "title": "Personal Tailoring",
+        "tag": "Leader first, individual always"
+      }
+    ],
+
+    "valuesSection": {
+      "label": "Our Commitment",
+      "title1": "Principles that",
+      "title2": "define us"
+    },
+
+    "values": [
+      {
+        "label": "Absolute Confidentiality",
+        "desc": "Reinforced clauses in every contract. Your information remains strictly confidential."
+      },
+      {
+        "label": "24/7/365 Availability",
+        "desc": "Our clients are always a priority, without exception."
+      },
+      {
+        "label": "Uncompromising Excellence",
+        "desc": "We deliver only excellence. No compromise, ever."
+      }
+    ],
+
+    "finalMessage": {
+      "label": "Key Message",
+      "line1": "EXIMIA HANDLES",
+      "line2": "EVERYTHING THAT WASTES TIME",
+      "line3": "FOR LEADERS.",
+      "cta": "Start Your Transformation"
+    }
+  }
+}

@@ -3,14 +3,17 @@ import { NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Sun, Moon } from 'lucide-react'
 import { useTheme } from '../hooks/useTheme'
+import LanguageSwitcher from './ui/LanguageSwitcher'
+import { useTranslation } from 'react-i18next'
+
 
 const navItems = [
-  { path: '/', label: 'Accueil' },
-  { path: '/a-propos', label: 'À Propos' },
-  { path: '/cibles', label: 'Cibles' },
-  { path: '/services', label: 'Services' },
-  { path: '/tarifs', label: 'Tarifs' },
-  { path: '/contact', label: 'Contact' },
+  { path: '/', key: 'nav.home' },
+  { path: '/a-propos', key: 'nav.about' },
+  { path: '/cibles', key: 'nav.cibles' },
+  { path: '/services', key: 'nav.services' },
+  { path: '/tarifs', key: 'nav.tarifs' },
+  { path: '/contact', key: 'nav.contact' },
 ]
 
 export default function Navbar() {
@@ -18,6 +21,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const { theme, toggleTheme, isDark } = useTheme()
   const location = useLocation()
+  const { t } = useTranslation('common')
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40)
@@ -44,7 +48,7 @@ export default function Navbar() {
           borderBottom: scrolled ? '1px solid rgba(197,160,89,0.15)' : '1px solid transparent',
         }}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="w-full mx-auto px-6 lg:px-10">
           <div className="flex items-center justify-between h-20">
 
             {/* Logo */}
@@ -77,13 +81,15 @@ export default function Navbar() {
                   }
                   style={{ fontWeight: 300 }}
                 >
-                  {item.label}
+                  {t(item.key)}
                 </NavLink>
               ))}
             </div>
 
             {/* Right actions */}
             <div className="flex items-center gap-4">
+
+              <LanguageSwitcher />
 
               {/* Theme toggle */}
               {/* <motion.button
@@ -104,7 +110,7 @@ export default function Navbar() {
                   className="btn-gold text-xs"
                   style={{ padding: '10px 24px' }}
                 >
-                  Diagnostic Offert
+                  {t('cta.contact')}
                 </motion.button>
               </NavLink>
 
@@ -229,7 +235,7 @@ export default function Navbar() {
                                   : 'rgba(30,30,30,0.6)',
                             }}
                           >
-                            {item.label}
+                            {t(item.key)}
                           </span>
                           {isActive && (
                             <motion.div
@@ -261,6 +267,10 @@ export default function Navbar() {
                 className="px-8 pb-10 pt-6"
                 style={{ borderTop: '1px solid rgba(197,160,89,0.1)' }}
               >
+                <div className="mb-4">
+                  <LanguageSwitcher />
+                </div>
+
                 {/* CTA principal */}
                 <NavLink
                   to="/contact"
@@ -268,7 +278,7 @@ export default function Navbar() {
                   className="btn-gold w-full justify-center text-xs"
                   style={{ padding: '14px 24px' }}
                 >
-                  Diagnostic Gratuit (2h)
+                  {t('cta.contact')}
                 </NavLink>
 
 

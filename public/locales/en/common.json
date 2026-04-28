@@ -1,0 +1,48 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "cibles": "Targets",
+    "services": "Services",
+    "tarifs": "Pricing",
+    "contact": "Contact"
+  },
+  "language": {
+    "fr": "Français",
+    "en": "English"
+  },
+  "cta": {
+    "contact": "Free Consultation (2h)",
+    "services": "Discover our Services"
+  },
+  "footer": {
+    "bandLabel": "Ready to take the next step?",
+    "bandTitle": "Free your time.",
+    "bandButton": "Start the conversation",
+    "brandTagline": "The art of freeing leaders' time",
+    "discreteExcellence": "Discrete Excellence",
+    "contactTitle": "Direct Contact",
+    "copyright": "© 2026 HERMON EXIMIA. All rights reserved."
+  },
+  "pillars": [
+    "Event Excellence",
+    "Smart Mobility",
+    "Total Reliability",
+    "Absolute Reactivity",
+    "Personal Tailoring"
+  ],
+  "contact": {
+    "phone": "+242 06 186 36 05\n+242 05 386 24 16",
+    "email": "contact@hermon-eximia.com",
+    "location": "Pointe-Noire\nRepublic of Congo"
+  },
+  "loader": {
+    "brand": "HERMON EXIMIA",
+    "tagline": "Premium Multi-Domain Concierge"
+  }
+  ,
+  "loaderUI": {
+    "initLabel": "Initializing",
+    "bottomTagline": "The exceptional elevation of quality of work-life"
+  }
+}

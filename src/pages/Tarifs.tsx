@@ -5,117 +5,64 @@ import { NavLink } from 'react-router-dom'
 import PageTransition from '../components/PageTransition'
 import SectionReveal from '../components/SectionReveal'
 import { useTheme } from '../hooks/useTheme'
-
-const durations = ['1 Mois', '3 Mois', '6 Mois', '9 Mois', '12 Mois']
-
-const plans = [
-  {
-    id: 'talent',
-    title: 'Talent',
-    subtitle: 'Cadres · Collaborateurs à fort potentiel',
-    description: "L'excellence accessible pour les talents qui construisent l'avenir.",
-    prices: [180_000, 480_000, 900_000, 1_250_000, 1_600_000],
-    availability: 'Jours ouvrés · 8h–20h',
-    features: [
-      'Assistance jours ouvrés',
-      'Services quotidiens',
-      'Courses & pressing',
-      'Administratif courant',
-      'Organisation personnelle',
-      'Plateforme digitale dédiée',
-    ],
-    accent: '#22c55e',
-    accentBg: 'rgba(22,101,52,0.1)',
-    featured: false,
-  },
-  {
-    id: 'operationnelle',
-    title: 'Opérationnelle',
-    subtitle: 'Cadres Dirigeants · Managers Supérieurs · Experts',
-    description: 'La fluidité opérationnelle pour ceux qui sont en mouvement permanent.',
-    prices: [350_000, 950_000, 1_800_000, 2_500_000, 3_200_000],
-    availability: '7j/7 · 6h–22h',
-    features: [
-      'Assistance prioritaire 6h–22h',
-      'Gestion des déplacements',
-      'Support administratif urgent',
-      'Tâches personnelles courantes',
-      'Hotline dédiée',
-      'Événements & protocole',
-    ],
-    accent: '#C5A059',
-    accentBg: 'rgba(197,160,89,0.08)',
-    featured: true,
-  },
-  {
-    id: 'strategique',
-    title: 'Stratégique',
-    subtitle: 'Dirigeants · COMEX · Actionnaires · Associés',
-    description: "La souveraineté absolue pour les décideurs qui ne peuvent pas se permettre d'attendre.",
-    prices: [600_000, 1_700_000, 3_200_000, 4_500_000, 5_500_000],
-    availability: '24h/24 · 7j/7 · 365j/an',
-    features: [
-      'Disponibilité 24/7/365',
-      'Interlocuteur Senior dédié',
-      'Assistance illimitée pro & privée',
-      'Agenda privé intégral',
-      'Accompagnement physique',
-      'Confidentialité absolue contractuelle',
-    ],
-    accent: '#DAB1DA',
-    accentBg: 'rgba(75,0,130,0.1)',
-    featured: false,
-  },
-]
-
-const groupExample = [
-  { cat: 'Stratégiques', prices: [6_000_000, 17_000_000, 32_000_000, 45_000_000, 55_000_000] },
-  { cat: 'Opérationnels', prices: [3_500_000, 9_500_000, 18_000_000, 25_000_000, 32_000_000] },
-  { cat: 'Talents', prices: [1_800_000, 4_800_000, 9_000_000, 12_500_000, 16_000_000] },
-]
-
-const fmt = (n: number) =>
-  new Intl.NumberFormat('fr-FR').format(n) + ' FCFA'
+import { usePricing, fmtPrice } from '../hooks/usePricing'
+import { durations, type Duration } from '../data/pricing.data'
 
 export default function Tarifs() {
   const [activeDuration, setActiveDuration] = useState(0)
   const { isDark } = useTheme()
+  const { 
+    getPlans, 
+    getGroupExample, 
+    getHeroContent, 
+    getGroupSectionContent, 
+    getDiagnosticContent,
+    getStaticText,
+    durations: activeDurations
+  } = usePricing()
+  
+  const plans = getPlans()
+  const groupExample = getGroupExample()
+  const heroContent = getHeroContent()
+  const groupSectionContent = getGroupSectionContent()
+  const diagnosticContent = getDiagnosticContent()
+  const recommendedText = getStaticText('recommended')
+  const perAgentText = getStaticText('perAgent')
+  const chooseOfferText = getStaticText('chooseOffer')
 
   return (
     <PageTransition>
       {/* ═══ HERO ═══ */}
-     
+      <section className="relative pt-28 md:pt-40 pb-10 md:pb-24 px-6 overflow-hidden">
+        {/* Image d'arrière-plan */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="images/tarif.jpg"
+            alt="Pricing architecture"
+            className="w-full max-h-[650px] h-full object-cover"
+          />
+        </div>
 
-       <section className="relative pt-28 md:pt-40 pb-10 md:pb-24 px-6 overflow-hidden">
-              {/* Image d'arrière-plan */}
-              <div className="absolute inset-0 z-0">
-                <img
-                  src="images/tarif.jpg"
-                  alt="Architecture d'excellence - piliers de la réussite"
-                  className="w-full max-h-[650px] h-full object-cover"
-                />
-              </div>
-      
-              {/* Overlay plus sombre pour la lisibilité */}
-              <div className="absolute inset-0 z-1"
-                style={{
-                  background: isDark
-                    ? 'radial-gradient(ellipse at 30% 50%, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 60%), radial-gradient(ellipse at 70% 50%, rgba(197,160,89,0.15) 0%, transparent 80%)'
-                    : 'radial-gradient(ellipse at 30% 50%, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.45) 60%), radial-gradient(ellipse at 70% 50%, rgba(197,160,89,0.1) 0%, transparent 80%)',
-                }}
-              />
-              <div className="hero-glow w-[600px] h-[600px] top-4 left-2 bg-black opacity-40" />
-              <div className="hero-glow w-[600px] h-[600px] top-[50%] left-4 bg-violet-950/20 opacity-80" />
-      
-              <div className="relative z-10 max-w-5xl mx-auto">
-                <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="section-label mb-6">
-            Investissement & Engagement
+        {/* Overlay plus sombre pour la lisibilité */}
+        <div className="absolute inset-0 z-1"
+          style={{
+            background: isDark
+              ? 'radial-gradient(ellipse at 30% 50%, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 60%), radial-gradient(ellipse at 70% 50%, rgba(197,160,89,0.15) 0%, transparent 80%)'
+              : 'radial-gradient(ellipse at 30% 50%, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.45) 60%), radial-gradient(ellipse at 70% 50%, rgba(197,160,89,0.1) 0%, transparent 80%)',
+          }}
+        />
+        <div className="hero-glow w-[600px] h-[600px] top-4 left-2 bg-black opacity-40" />
+        <div className="hero-glow w-[600px] h-[600px] top-[50%] left-4 bg-violet-950/20 opacity-80" />
+
+        <div className="relative z-10 max-w-5xl mx-auto">
+          <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="section-label mb-6">
+            {heroContent.label}
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.8 }}
             className="section-title mb-8" style={{ maxWidth: '700px' }}
           >
-            Des Tarifs à la hauteur<br />de votre <em>ambition</em>
+            {heroContent.title1}<br />de votre <em>{heroContent.title2}</em>
           </motion.h1>
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 0.7 }} className="divider-gold" />
           <motion.p
@@ -123,34 +70,32 @@ export default function Tarifs() {
             className="font-body text-base leading-relaxed mt-8"
             style={{ color: 'var(--text-secondary)', maxWidth: '560px' }}
           >
-            Nos tarifs reflètent l'excellence, la rareté et la valeur réelle du service HERMON EXIMIA.
-            Nous n'accompagnons que ceux qui ont compris que <strong style={{ color: 'var(--text-primary)' }}>le temps libéré n'a pas de prix.</strong>
+            {heroContent.description}
           </motion.p>
-                <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 0.7 }} className="divider-gold mb-8" />
-      
-                {/* Bouton d'action */}
-                <NavLink to="/tarifs">
-                  <motion.button
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.9, duration: 0.5 }}
-                    className="btn-gold inline-flex items-center gap-2 px-8 py-3 rounded-md font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
-      
-                  >
-                    <span className='inline-flex items-center gap-1'>
-                      Découvrir nos tarifs
-                      <ArrowRight className='w-5 h-5' />
-                    </span>
-                  </motion.button>
-                </NavLink>
-              </div>
-            </section>
+          <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 0.7 }} className="divider-gold mb-8" />
+
+          {/* Bouton d'action */}
+          <NavLink to="/tarifs">
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9, duration: 0.5 }}
+              className="btn-gold inline-flex items-center gap-2 px-8 py-3 rounded-md font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            >
+              <span className='inline-flex items-center gap-1'>
+                {heroContent.cta}
+                <ArrowRight className='w-5 h-5' />
+              </span>
+            </motion.button>
+          </NavLink>
+        </div>
+      </section>
 
       {/* ═══ DURATION SELECTOR ═══ */}
       <section className="px-6 pb-16 mt-6 md:mt-4">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-wrap justify-center gap-2 mb-16">
-            {durations.map((d, i) => (
+            {activeDurations.map((d, i) => (
               <motion.button
                 key={d}
                 whileTap={{ scale: 0.96 }}
@@ -186,7 +131,7 @@ export default function Tarifs() {
                       style={{ background: '#C5A059' }}
                     >
                       <span className="font-heading text-xs tracking-[0.3em] uppercase" style={{ color: '#0a0a0a', fontWeight: 400 }}>
-                        Recommandé
+                        {recommendedText}
                       </span>
                     </div>
                   )}
@@ -215,11 +160,11 @@ export default function Tarifs() {
                           className="font-display"
                           style={{ fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', color: plan.accent, fontWeight: 300 }}
                         >
-                          {fmt(plan.prices[activeDuration])}
+                          {fmtPrice(plan.prices[activeDuration])}
                         </motion.span>
                       </div>
                       <p className="font-heading text-xs tracking-[0.2em] uppercase" style={{ color: 'rgba(160,152,144,0.5)' }}>
-                        par agent · {durations[activeDuration]}
+                        {perAgentText} · {activeDurations[activeDuration]}
                       </p>
                       <div className="mt-3 px-3 py-1.5 inline-block" style={{ background: plan.accentBg, border: `1px solid ${plan.accent}30` }}>
                         <span className="font-heading text-xs tracking-widest uppercase" style={{ color: plan.accent, fontSize: '0.6rem' }}>
@@ -251,7 +196,7 @@ export default function Tarifs() {
                           fontWeight: 300,
                         }}
                       >
-                        Choisir cette offre
+                        {chooseOfferText}
                       </motion.button>
                     </NavLink>
                   </div>
@@ -266,10 +211,10 @@ export default function Tarifs() {
       <section className="py-24 px-6" style={{ background: isDark ? '#060606' : '#f0ede8' }}>
         <div className="max-w-5xl mx-auto">
           <SectionReveal className="text-center mb-16">
-            <p className="section-label mb-4">Offre Entreprise</p>
-            <h2 className="section-title">Exemple pour un <em>groupe de 10</em></h2>
+            <p className="section-label mb-4">{groupSectionContent.label}</p>
+            <h2 className="section-title">{groupSectionContent.title} <em>{groupSectionContent.titleEm}</em></h2>
             <p className="font-body text-sm mt-4" style={{ color: 'var(--text-secondary)' }}>
-              Équipez l'ensemble de vos équipes dirigeantes. Des conditions préférentielles sont négociables.
+              {groupSectionContent.description}
             </p>
           </SectionReveal>
 
@@ -279,9 +224,9 @@ export default function Tarifs() {
                 <thead>
                   <tr>
                     <th className="py-4 px-6 text-left font-heading text-xs tracking-widest uppercase" style={{ color: 'var(--text-secondary)', fontWeight: 300, background: isDark ? 'rgba(26,26,26,0.6)' : 'rgba(240,237,232,0.8)', borderBottom: '1px solid rgba(197,160,89,0.15)' }}>
-                      Catégorie
+                      {groupSectionContent.category}
                     </th>
-                    {durations.map(d => (
+                    {activeDurations.map(d => (
                       <th key={d} className="py-4 px-4 text-center font-heading text-xs tracking-widest uppercase" style={{ color: '#C5A059', fontWeight: 300, background: isDark ? 'rgba(26,26,26,0.6)' : 'rgba(240,237,232,0.8)', borderBottom: '1px solid rgba(197,160,89,0.15)' }}>
                         {d}
                       </th>
@@ -299,7 +244,7 @@ export default function Tarifs() {
                       </td>
                       {row.prices.map((price, j) => (
                         <td key={j} className="py-4 px-4 text-center font-body text-sm" style={{ color: 'var(--text-secondary)', borderBottom: '1px solid rgba(197,160,89,0.05)' }}>
-                          {fmt(price)}
+                          {fmtPrice(price)}
                         </td>
                       ))}
                     </tr>
@@ -315,15 +260,14 @@ export default function Tarifs() {
               style={{ border: '1px solid rgba(197,160,89,0.2)', background: isDark ? 'rgba(75,0,130,0.08)' : 'rgba(75,0,130,0.04)' }}
             >
               <p className="font-display text-lg italic mb-2" style={{ color: '#C5A059' }}>
-                Diagnostic Offert (2h)
+                {diagnosticContent.title}
               </p>
               <p className="font-body text-sm mb-6" style={{ color: 'var(--text-secondary)' }}>
-                Nous vous proposons une séance d'audit de 2 heures pour identifier les sources
-                d'éparpillement dans votre organisation personnelle et professionnelle.
+                {diagnosticContent.description}
               </p>
               <NavLink to="/contact">
                 <motion.button whileHover={{ scale: 1.02 }} className="btn-gold">
-                  Réserver mon Diagnostic
+                  {diagnosticContent.cta}
                   <ArrowRight size={14} />
                 </motion.button>
               </NavLink>

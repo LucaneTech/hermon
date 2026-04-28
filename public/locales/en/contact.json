@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "label": "Initiate the Transformation",
+    "title": "Your next decision<br />starts <em>here</em>"
+  },
+  "sidebar": {
+    "diagnostic": {
+      "label": "Exclusive Offer",
+      "title": "Complimentary Assessment",
+      "description": "A <strong>2-hour</strong> audit session to identify sources of dispersion in your personal and professional organization.",
+      "footer": "No obligation · Confidential · By invitation only"
+    },
+    "contactDirect": "Direct Contact",
+    "phone": "Phone",
+    "email": "Email",
+    "location": "Location",
+    "pointeNoire": "Pointe-Noire<br />Republic of Congo",
+    "responseTime": {
+      "title": "Response Time",
+      "description": "We acknowledge receipt within <strong>2 business hours</strong>. Urgent? Call us directly."
+    }
+  },
+  "form": {
+    "title": "Contact Form",
+    "subtitle": "All information transmitted is covered by our confidentiality charter.",
+    "success": "Message sent successfully. We will get back to you within 2 business hours.",
+    "error": "An error occurred. Please contact us directly by phone.",
+    "fields": {
+      "fullName": "Full Name *",
+      "fullNamePlaceholder": "John Doe",
+      "company": "Company / Organization",
+      "companyPlaceholder": "Your company",
+      "email": "Professional Email *",
+      "emailPlaceholder": "john@company.com",
+      "phone": "Phone",
+      "phonePlaceholder": "+242 06 XXX XX XX",
+      "category": "Category *",
+      "categoryOptions": {
+        "strategic": "Strategic — Executives",
+        "operational": "Operational — Managers",
+        "talent": "Talent — Employees",
+        "group": "Group Offer — Company"
+      },
+      "subject": "Subject *",
+      "subjectOptions": {
+        "diagnostic": "Complimentary Assessment (2h)",
+        "quote": "Quote Request",
+        "partnership": "Strategic Partnership",
+        "info": "Information Request"
+      },
+      "message": "Your Message *",
+      "messagePlaceholder": "How can we free up your time and elevate your daily life?",
+      "privacyNote": "* Required fields. Your data is protected by our confidentiality charter. No information will be shared without your explicit consent."
+    },
+    "submit": {
+      "sending": "Sending...",
+      "default": "Send my Request"
+    }
+  },
+  "map": {
+    "location": "Pointe-Noire, Republic of Congo",
+    "description": "We come to you by confirmed appointment."
+  }
+}

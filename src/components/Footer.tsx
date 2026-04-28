@@ -2,26 +2,21 @@ import { NavLink } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Phone, Mail, MapPin, ArrowUpRight } from 'lucide-react'
 import { useTheme } from '../hooks/useTheme'
+import { useTranslation } from 'react-i18next'
 
 const links = [
-  { path: '/', label: 'Accueil' },
-  { path: '/a-propos', label: 'À Propos' },
-  { path: '/cibles', label: 'Nos Cibles' },
-  { path: '/services', label: 'Services' },
-  { path: '/tarifs', label: 'Tarifs' },
-  { path: '/contact', label: 'Contact' },
-]
-
-const pillars = [
-  'Excellence Événementielle',
-  'Mobilité Intelligente',
-  'Fiabilité Totale',
-  'Réactivité Absolue',
-  'Sur-Mesure Personnel',
+  { path: '/', key: 'nav.home' },
+  { path: '/a-propos', key: 'nav.about' },
+  { path: '/cibles', key: 'nav.cibles' },
+  { path: '/services', key: 'nav.services' },
+  { path: '/tarifs', key: 'nav.tarifs' },
+  { path: '/contact', key: 'nav.contact' },
 ]
 
 export default function Footer() {
   const { isDark } = useTheme()
+  const { t } = useTranslation('common')
+  const pillars = t('pillars', { returnObjects: true }) as string[]
 
   return (
     <footer
@@ -39,13 +34,13 @@ export default function Footer() {
         }}
       >
         <div className="max-w-7xl mx-auto text-center">
-          <p className="section-label mb-4">Prêt à franchir le seuil de l'excellence ?</p>
+          <p className="section-label mb-4">{t('footer.bandLabel')}</p>
           <h2
             className="font-display mb-8"
             style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', fontWeight: 300, color: 'var(--text-primary)' }}
           >
-            Libérez votre temps.<br />
-            <em style={{ color: '#C5A059' }}>Régnez sur vos priorités.</em>
+            {t('footer.bandTitle')}<br />
+            <em style={{ color: '#C5A059' }}>{t('footer.brandTagline')}</em>
           </h2>
 
           <NavLink to="/contact">
@@ -54,7 +49,7 @@ export default function Footer() {
               whileTap={{ scale: 0.98 }}
               className="btn-gold"
             >
-              Initier la Conversation
+              {t('footer.bandButton')}
               <ArrowUpRight size={14} />
             </motion.button>
           </NavLink>
@@ -68,22 +63,20 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
 
-
             <motion.img
               src="./images/logo.png"
-              alt="Logo Hermon Eximia"
+              alt={t('footer.brandTagline')}
               className="h-32 md:h-40 w-auto object-contain"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             />
 
-
             <p className="font-body text-sm leading-relaxed" style={{ color: 'var(--text-secondary)', maxWidth: '260px' }}>
-              L'art de libérer le temps des leaders et collaborateurs d'exception, en République du Congo et au-delà.
+              {t('footer.brandTagline')}.
             </p>
             <div className="mt-6 w-12 h-px" style={{ background: '#C5A059' }} />
             <p className="mt-4 font-display text-sm italic" style={{ color: 'rgba(197,160,89,0.5)' }}>
-              « Excellence Discrète »
+              {t('footer.discreteExcellence')}
             </p>
           </div>
 
@@ -98,7 +91,7 @@ export default function Footer() {
                     className="font-body text-sm animated-link transition-colors duration-300"
                     style={{ color: 'var(--text-secondary)' }}
                   >
-                    {link.label}
+                    {t(link.key)}
                   </NavLink>
                 </li>
               ))}
@@ -107,9 +100,9 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="section-label mb-6">Nos 5 Piliers</h4>
+            <h4 className="section-label mb-6">{t('footer.pillarsTitle', 'Nos 5 Piliers')}</h4>
             <ul className="space-y-3">
-              {pillars.map(p => (
+              {pillars.map((p: string) => (
                 <li key={p} className="flex items-start gap-2">
                   <span className="mt-1 w-1 h-1 rounded-full flex-shrink-0" style={{ background: '#C5A059' }} />
                   <span className="font-body text-sm" style={{ color: 'var(--text-secondary)' }}>{p}</span>
@@ -120,24 +113,24 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="section-label mb-6">Contact Direct</h4>
+            <h4 className="section-label mb-6">{t('footer.contactTitle')}</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Phone size={14} className="mt-1 flex-shrink-0" style={{ color: '#C5A059' }} />
                 <div className="font-body text-sm" style={{ color: 'var(--text-secondary)' }}>
-                  +242 06 186 36 05<br />+242 05 386 24 16
+                  {t('contact.phone')}
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Mail size={14} className="mt-1 flex-shrink-0" style={{ color: '#C5A059' }} />
-                <a href="mailto:contact@hermoneximia.com" className="font-body text-sm animated-link" style={{ color: 'var(--text-secondary)' }}>
-                  contact@hermon-eximia.com
+                <a href={`mailto:${t('contact.email')}`} className="font-body text-sm animated-link" style={{ color: 'var(--text-secondary)' }}>
+                  {t('contact.email')}
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin size={14} className="mt-1 flex-shrink-0" style={{ color: '#C5A059' }} />
                 <span className="font-body text-sm" style={{ color: 'var(--text-secondary)' }}>
-                  Pointe-Noire<br />République du Congo
+                  {t('contact.location')}
                 </span>
               </li>
             </ul>
@@ -149,7 +142,7 @@ export default function Footer() {
           style={{ borderTop: '1px solid rgba(197,160,89,0.1)' }}
         >
           <p className="font-body text-xs text-center" style={{ color: 'rgba(160,152,144,0.5)' }}>
-            © 2026 HERMON EXIMIA. Tous droits réservés. 
+            {t('footer.copyright')}
           </p>
         
         </div>

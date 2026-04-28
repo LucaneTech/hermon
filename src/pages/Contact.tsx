@@ -2,16 +2,17 @@ import { useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Phone, Mail, MapPin, CheckCircle, AlertCircle, Send } from 'lucide-react'
 import emailjs from '@emailjs/browser'
+import { useTranslation } from 'react-i18next'
 import PageTransition from '../components/PageTransition'
 import SectionReveal from '../components/SectionReveal'
 import { useTheme } from '../hooks/useTheme'
 import { EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID } from '../utils/constants'
 
-
 type Status = 'idle' | 'sending' | 'success' | 'error'
 
 export default function Contact() {
   const { isDark } = useTheme()
+  const { t } = useTranslation('contact')
   const formRef = useRef<HTMLFormElement>(null)
   const [status, setStatus] = useState<Status>('idle')
   const [formData, setFormData] = useState({
@@ -35,7 +36,15 @@ export default function Contact() {
       if (formRef.current) {
         await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formRef.current, EMAILJS_PUBLIC_KEY)
         setStatus('success')
-        setFormData({ name: '', company: '', email: '', phone: '', category: 'Stratégique', subject: 'Diagnostic Offert (2h)', message: '' })
+        setFormData({ 
+          name: '', 
+          company: '', 
+          email: '', 
+          phone: '', 
+          category: 'Stratégique', 
+          subject: 'Diagnostic Offert (2h)', 
+          message: '' 
+        })
       }
     } catch {
       setStatus('error')
@@ -50,14 +59,14 @@ export default function Contact() {
         <div className="absolute inset-0" style={{ background: isDark ? 'radial-gradient(ellipse at 40% 60%, rgba(75,0,130,0.1) 0%, transparent 60%)' : 'none' }} />
         <div className="relative z-10 max-w-5xl mx-auto">
           <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="section-label mb-6">
-            Initier la Transformation
+            {t('hero.label')}
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.8 }}
-            className="section-title mb-8" style={{ maxWidth: '700px' }}
-          >
-            Votre prochaine décision<br />commence <em>ici</em>
-          </motion.h1>
+            className="section-title mb-8" 
+            style={{ maxWidth: '700px' }}
+            dangerouslySetInnerHTML={{ __html: t('hero.title') }}
+          />
           <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 0.7 }} className="divider-gold" />
         </div>
       </section>
@@ -80,26 +89,27 @@ export default function Contact() {
                     }}
                   >
                     <div className="absolute top-0 right-0 w-16 h-16" style={{ borderTop: '2px solid #C5A059', borderRight: '2px solid #C5A059' }} />
-                    <p className="section-label mb-4">Offre exclusive</p>
+                    <p className="section-label mb-4">{t('sidebar.diagnostic.label')}</p>
                     <h3 className="font-display text-2xl mb-3" style={{ color: '#C5A059', fontWeight: 300 }}>
-                      Diagnostic Offert
+                      {t('sidebar.diagnostic.title')}
                     </h3>
-                    <p className="font-body text-sm leading-relaxed mb-2" style={{ color: 'var(--text-secondary)' }}>
-                      Une séance d'audit de <strong style={{ color: 'var(--text-primary)' }}>2 heures</strong> pour identifier les sources 
-                      d'éparpillement dans votre organisation personnelle et professionnelle.
-                    </p>
+                    <p 
+                      className="font-body text-sm leading-relaxed mb-2" 
+                      style={{ color: 'var(--text-secondary)' }}
+                      dangerouslySetInnerHTML={{ __html: t('sidebar.diagnostic.description') }}
+                    />
                     <p className="font-display text-sm italic" style={{ color: 'rgba(197,160,89,0.6)' }}>
-                      Sans engagement · Confidentiel · Sur invitation
+                      {t('sidebar.diagnostic.footer')}
                     </p>
                   </div>
 
                   {/* Contact details */}
                   <div className="space-y-6">
-                    <h4 className="section-label">Contact Direct</h4>
+                    <h4 className="section-label">{t('sidebar.contactDirect')}</h4>
                     {[
-                      { icon: Phone, label: 'Téléphone', value: '+242 06 186 36 05\n+242 05 386 24 16', href: 'tel:+242061863605' },
-                      { icon: Mail, label: 'Email', value: 'contact@hermoneximia.com', href: 'mailto:contact@hermoneximia.com' },
-                      { icon: MapPin, label: 'Localisation', value: 'Pointe-Noire\nRépublique du Congo', href: undefined },
+                      { icon: Phone, label: t('sidebar.phone'), value: '+242 06 186 36 05\n+242 05 386 24 16', href: 'tel:+242061863605' },
+                      { icon: Mail, label: t('sidebar.email'), value: 'contact@hermoneximia.com', href: 'mailto:contact@hermoneximia.com' },
+                      { icon: MapPin, label: t('sidebar.location'), value: t('sidebar.pointeNoire'), href: undefined },
                     ].map(item => (
                       <div key={item.label} className="flex items-start gap-4">
                         <div className="w-10 h-10 flex items-center justify-center flex-shrink-0" style={{ border: '1px solid rgba(197,160,89,0.25)', background: 'rgba(75,0,130,0.1)' }}>
@@ -112,7 +122,7 @@ export default function Contact() {
                               {item.value}
                             </a>
                           ) : (
-                            <p className="font-body text-sm whitespace-pre-line" style={{ color: 'var(--text-secondary)' }}>{item.value}</p>
+                            <p className="font-body text-sm whitespace-pre-line" style={{ color: 'var(--text-secondary)' }} dangerouslySetInnerHTML={{ __html: item.value }} />
                           )}
                         </div>
                       </div>
@@ -121,11 +131,14 @@ export default function Contact() {
 
                   {/* Response time */}
                   <div className="p-5" style={{ background: isDark ? 'rgba(26,26,26,0.4)' : 'rgba(240,237,232,0.6)', border: '1px solid rgba(197,160,89,0.1)' }}>
-                    <p className="font-heading text-xs tracking-widest uppercase mb-2" style={{ color: '#C5A059', fontWeight: 300 }}>Délai de Réponse</p>
-                    <p className="font-body text-sm" style={{ color: 'var(--text-secondary)' }}>
-                      Nous accusons réception sous <strong style={{ color: 'var(--text-primary)' }}>2 heures ouvrées</strong>. 
-                      Urgence ? Appelez directement.
+                    <p className="font-heading text-xs tracking-widest uppercase mb-2" style={{ color: '#C5A059', fontWeight: 300 }}>
+                      {t('sidebar.responseTime.title')}
                     </p>
+                    <p 
+                      className="font-body text-sm" 
+                      style={{ color: 'var(--text-secondary)' }}
+                      dangerouslySetInnerHTML={{ __html: t('sidebar.responseTime.description') }}
+                    />
                   </div>
                 </div>
               </SectionReveal>
@@ -139,35 +152,39 @@ export default function Contact() {
                   style={{ background: isDark ? 'rgba(17,17,17,0.8)' : 'rgba(255,255,255,0.8)', border: '1px solid rgba(197,160,89,0.15)' }}
                 >
                   <h2 className="font-heading text-lg tracking-widest uppercase mb-2" style={{ color: 'var(--text-primary)', fontWeight: 300 }}>
-                    Formulaire de Contact
+                    {t('form.title')}
                   </h2>
                   <p className="font-body text-sm mb-8" style={{ color: 'var(--text-secondary)' }}>
-                    Toutes les informations transmises sont couvertes par notre charte de confidentialité.
+                    {t('form.subtitle')}
                   </p>
 
                   {/* Status messages */}
                   <AnimatePresence>
                     {status === 'success' && (
                       <motion.div
-                        initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
+                        initial={{ opacity: 0, y: -10 }} 
+                        animate={{ opacity: 1, y: 0 }} 
+                        exit={{ opacity: 0 }}
                         className="flex items-center gap-3 p-4 mb-6"
                         style={{ background: 'rgba(22,101,52,0.15)', border: '1px solid rgba(34,197,94,0.3)' }}
                       >
                         <CheckCircle size={16} style={{ color: '#22c55e' }} />
                         <p className="font-body text-sm" style={{ color: '#22c55e' }}>
-                          Message envoyé avec succès. Nous vous recontactons sous 2h ouvrées.
+                          {t('form.success')}
                         </p>
                       </motion.div>
                     )}
                     {status === 'error' && (
                       <motion.div
-                        initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
+                        initial={{ opacity: 0, y: -10 }} 
+                        animate={{ opacity: 1, y: 0 }} 
+                        exit={{ opacity: 0 }}
                         className="flex items-center gap-3 p-4 mb-6"
                         style={{ background: 'rgba(153,27,27,0.15)', border: '1px solid rgba(239,68,68,0.3)' }}
                       >
                         <AlertCircle size={16} style={{ color: '#ef4444' }} />
                         <p className="font-body text-sm" style={{ color: '#ef4444' }}>
-                          Une erreur est survenue. Veuillez nous contacter directement par téléphone.
+                          {t('form.error')}
                         </p>
                       </motion.div>
                     )}
@@ -177,61 +194,90 @@ export default function Contact() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       {/* Name */}
                       <div>
-                        <label className="form-label">Nom & Prénom *</label>
-                        <input name="name" value={formData.name} onChange={handleChange} required
-                          placeholder="Jean Dupont" className="form-input" />
+                        <label className="form-label">{t('form.fields.fullName')}</label>
+                        <input 
+                          name="name" 
+                          value={formData.name} 
+                          onChange={handleChange} 
+                          required
+                          placeholder={t('form.fields.fullNamePlaceholder')} 
+                          className="form-input" 
+                        />
                       </div>
                       {/* Company */}
                       <div>
-                        <label className="form-label">Entreprise / Organisation</label>
-                        <input name="company" value={formData.company} onChange={handleChange}
-                          placeholder="Votre société" className="form-input" />
+                        <label className="form-label">{t('form.fields.company')}</label>
+                        <input 
+                          name="company" 
+                          value={formData.company} 
+                          onChange={handleChange}
+                          placeholder={t('form.fields.companyPlaceholder')} 
+                          className="form-input" 
+                        />
                       </div>
                       {/* Email */}
                       <div>
-                        <label className="form-label">Email Professionnel *</label>
-                        <input name="email" type="email" value={formData.email} onChange={handleChange} required
-                          placeholder="jean@entreprise.com" className="form-input" />
+                        <label className="form-label">{t('form.fields.email')}</label>
+                        <input 
+                          name="email" 
+                          type="email" 
+                          value={formData.email} 
+                          onChange={handleChange} 
+                          required
+                          placeholder={t('form.fields.emailPlaceholder')} 
+                          className="form-input" 
+                        />
                       </div>
                       {/* Phone */}
                       <div>
-                        <label className="form-label">Téléphone</label>
-                        <input name="phone" value={formData.phone} onChange={handleChange}
-                          placeholder="+242 06 XXX XX XX" className="form-input" />
+                        <label className="form-label">{t('form.fields.phone')}</label>
+                        <input 
+                          name="phone" 
+                          value={formData.phone} 
+                          onChange={handleChange}
+                          placeholder={t('form.fields.phonePlaceholder')} 
+                          className="form-input" 
+                        />
                       </div>
                       {/* Category */}
                       <div>
-                        <label className="form-label">Catégorie Concernée *</label>
+                        <label className="form-label">{t('form.fields.category')}</label>
                         <select name="category" value={formData.category} onChange={handleChange} required className="form-input">
-                          <option value="Stratégique" className='text-gray-900'>Stratégique — Dirigeants</option>
-                          <option value="Opérationnelle" className='text-gray-900'>Opérationnelle — Cadres</option>
-                          <option value="Talent" className='text-gray-900'>Talent — Collaborateurs</option>
-                          <option value="Groupe" className='text-gray-900'>Offre Groupe — Entreprise</option>
+                          <option value="Stratégique" className='text-gray-900'>{t('form.fields.categoryOptions.strategic')}</option>
+                          <option value="Opérationnelle" className='text-gray-900'>{t('form.fields.categoryOptions.operational')}</option>
+                          <option value="Talent" className='text-gray-900'>{t('form.fields.categoryOptions.talent')}</option>
+                          <option value="Groupe" className='text-gray-900'>{t('form.fields.categoryOptions.group')}</option>
                         </select>
                       </div>
                       {/* Subject */}
                       <div>
-                        <label className="form-label">Objet *</label>
+                        <label className="form-label">{t('form.fields.subject')}</label>
                         <select name="subject" value={formData.subject} onChange={handleChange} required className="form-input">
-                          <option value="Diagnostic Offert (2h)" className='text-gray-900'>Diagnostic Offert (2h)</option>
-                          <option value="Demande de Devis" className='text-gray-900'>Demande de Devis</option>
-                          <option value="Partenariat" className='text-gray-900'>Partenariat Stratégique</option>
-                          <option value="Information" className='text-gray-900'>Demande d'Information</option>
+                          <option value="Diagnostic Offert (2h)" className='text-gray-900'>{t('form.fields.subjectOptions.diagnostic')}</option>
+                          <option value="Demande de Devis" className='text-gray-900'>{t('form.fields.subjectOptions.quote')}</option>
+                          <option value="Partenariat" className='text-gray-900'>{t('form.fields.subjectOptions.partnership')}</option>
+                          <option value="Information" className='text-gray-900'>{t('form.fields.subjectOptions.info')}</option>
                         </select>
                       </div>
                     </div>
 
                     {/* Message */}
                     <div>
-                      <label className="form-label">Votre Message *</label>
-                      <textarea name="message" value={formData.message} onChange={handleChange} required
-                        rows={5} placeholder="Comment pouvons-nous libérer votre temps et élever votre quotidien ?"
-                        className="form-input resize-none" />
+                      <label className="form-label">{t('form.fields.message')}</label>
+                      <textarea 
+                        name="message" 
+                        value={formData.message} 
+                        onChange={handleChange} 
+                        required
+                        rows={5} 
+                        placeholder={t('form.fields.messagePlaceholder')}
+                        className="form-input resize-none" 
+                      />
                     </div>
 
                     {/* Privacy note */}
                     <p className="font-body text-xs" style={{ color: 'rgba(160,152,144,0.5)' }}>
-                      * Champs requis. Vos données sont protégées par notre charte de confidentialité. Aucune information ne sera partagée sans votre consentement explicite.
+                      {t('form.fields.privacyNote')}
                     </p>
 
                     {/* Submit */}
@@ -250,11 +296,11 @@ export default function Contact() {
                             transition={{ repeat: Infinity, duration: 1, ease: 'linear' }}
                             className="w-4 h-4 border-2 border-current border-t-transparent rounded-full"
                           />
-                          Envoi en cours...
+                          {t('form.submit.sending')}
                         </>
                       ) : (
                         <>
-                          Envoyer ma Demande
+                          {t('form.submit.default')}
                           <Send size={14} />
                         </>
                       )}
@@ -277,9 +323,9 @@ export default function Contact() {
             >
               <div className="text-center">
                 <MapPin size={40} style={{ color: 'rgba(197,160,89,0.3)', margin: '0 auto 16px' }} />
-                <p className="section-label mb-2">Pointe-Noire, République du Congo</p>
+                <p className="section-label mb-2">{t('map.location')}</p>
                 <p className="font-body text-sm" style={{ color: 'var(--text-secondary)' }}>
-                  Nous nous déplaçons chez vous sur rendez-vous confirmé.
+                  {t('map.description')}
                 </p>
               </div>
             </div>

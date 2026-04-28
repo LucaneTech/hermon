@@ -5,49 +5,58 @@ import PageTransition from '../components/PageTransition'
 import SectionReveal from '../components/SectionReveal'
 import { useTheme } from '../hooks/useTheme'
 import TeamGrid from '../components/aboutSection/OurTeam'
-const principles = [
+import { useTranslation } from 'react-i18next'
+
+
+
+
+export default function About() {
+  const { isDark } = useTheme()
+  const { t } = useTranslation('about')
+
+
+  const timeline = [
   {
-    icon: Lock,
-    title: 'Confidentialité Absolue',
-    desc: `Ce que nous savons de vous reste entre nous. Clause de confidentialité renforcée, inscrite dans chaque contrat, sans exception.`,
+    year: t('about.story.timeline.0.year'),
+    text: t('about.story.timeline.0.text'),
   },
   {
-    icon: Zap,
-    title: 'Disponibilité Permanente',
-    desc: `Nos clients sont prioritaires 24 heures sur 24, 7 jours sur 7, 365 jours par an. La notion de "hors horaires" n'existe pas pour nous.`,
+    year: t('about.story.timeline.1.year'),
+    text: t('about.story.timeline.1.text'),
   },
   {
-    icon: Eye,
-    title: 'Discrétion Royale',
-    desc: `Notre travail se reflète dans votre sérénité, jamais dans notre présence. Nous sommes le silence qui vous protège.`,
+    year: t('about.story.timeline.2.year'),
+    text: t('about.story.timeline.2.text'),
   },
   {
-    icon: Heart,
-    title: 'Adaptation Constante',
-    desc: `Nous évoluons avec vous et pour vous. Vos changements de vie deviennent immédiatement nos priorités, sans délai ni friction.`,
+    year: t('about.story.timeline.3.year'),
+    text: t('about.story.timeline.3.text'),
   },
 ]
 
-const timeline = [
+
+const principles = [
   {
-    year: 'Genèse',
-    text: `HERMON EXIMIA naît d'un constat implacable : les dirigeants africains les plus brillants perdent des heures précieuses sur des tâches qui ne méritent pas leur attention.`,
+    icon: Lock,
+    title: t('about.principles.items.0.title'),
+    desc: t('about.principles.items.0.desc'),
   },
   {
-    year: 'Vision',
-    text: `Créer le premier service de conciergerie multi-domaine premium au Congo, capable de rivaliser avec les standards des grandes maisons européennes.`,
+    icon: Zap,
+    title: t('about.principles.items.1.title'),
+    desc: t('about.principles.items.1.desc'),
   },
   {
-    year: 'Mission',
-    text: `Libérer chaque dirigeant, cadre et talent de tout ce qui l'empêche de réaliser pleinement son potentiel, tant professionnel que personnel.`,
+    icon: Eye,
+    title: t('about.principles.items.2.title'),
+    desc: t('about.principles.items.2.desc'),
   },
   {
-    year: 'Promesse',
-    text: `Chaque client EXIMIA bénéficie d'un interlocuteur unique, formé à l'excellence, dédié à sa réussite globale et disponible à tout moment.`,
+    icon: Heart,
+    title: t('about.principles.items.3.title'),
+    desc: t('about.principles.items.3.desc'),
   },
 ]
-export default function About() {
-  const { isDark } = useTheme()
 
   return (
     <PageTransition>
@@ -77,21 +86,20 @@ export default function About() {
   
   <div className="relative z-10 max-w-5xl mx-auto">
     <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="section-label mb-6">
-      Qui Sommes-Nous
+      {t('about.hero.label')}
     </motion.p>
     <motion.h1
       initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.8 }}
       className="section-title mb-4 md:mb-8" style={{ maxWidth: '700px' }}
     >
-      L'<em>Excellence Discrète</em><br />comme Philosophie
+      {t('about.hero.title.line1')} <em>{t('about.hero.title.line2')}</em> {t('about.hero.title.line3')}
     </motion.h1>
     <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 0.7 }} className="divider-gold" />
     <motion.p
       initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }}
       className="font-body text-lg leading-relaxed mt-8" style={{ color: 'var(--text-secondary)', maxWidth: '600px' }}
     >
-      HERMON EXIMIA n'est pas une conciergerie standard. Nous sommes le partenaire 
-      de l'efficacité directionnelle — l'architecte du temps libéré des leaders qui façonnent demain.
+      {t('about.hero.description')}
     </motion.p>
   </div>
 </section>
@@ -101,9 +109,9 @@ export default function About() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
             <SectionReveal direction="left">
-              <p className="section-label mb-4">Notre Histoire</p>
+              <p className="section-label mb-4">{t('about.story.label')}</p>
               <h2 className="section-title mb-10">
-                Née d'un constat,<br /><em>forgée par l'exigence</em>
+                {t('about.story.title.line1')}<br /><em>{t('about.story.title.line2')}</em>
               </h2>
               <div className="space-y-8">
                 {timeline.map((item, i) => (
@@ -134,10 +142,14 @@ export default function About() {
                   <div className="absolute top-0 right-0 w-20 h-20" style={{ borderTop: '2px solid #C5A059', borderRight: '2px solid #C5A059' }} />
                   <div className="absolute bottom-0 left-0 w-20 h-20" style={{ borderBottom: '2px solid #C5A059', borderLeft: '2px solid #C5A059' }} />
 
-                  <p className="section-label mb-6">Notre Positionnement</p>
+                  <p className="section-label mb-6">{t('about.positioning.label')}</p>
                   <div className="mb-8">
-                    <p className="font-heading text-xs tracking-widest uppercase mb-4" style={{ color: 'rgba(160,152,144,0.5)' }}>Nous ne sommes pas :</p>
-                    {['Une conciergerie standard', "Un simple service d'assistance", "Un prestataire parmi d'autres"].map(item => (
+                    <p className="font-heading text-xs tracking-widest uppercase mb-4" style={{ color: 'rgba(160,152,144,0.5)' }}>{t('about.positioning.notText')}</p>
+                    {[
+                      t('about.positioning.not.0'),
+                      t('about.positioning.not.1'),
+                      t('about.positioning.not.2')
+                    ].map(item => (
                       <div key={item} className="flex items-center gap-3 mb-2">
                         <div className="w-3 h-px" style={{ background: 'rgba(160,152,144,0.4)' }} />
                         <span className="font-body text-sm line-through" style={{ color: 'rgba(160,152,144,0.5)' }}>{item}</span>
@@ -145,11 +157,11 @@ export default function About() {
                     ))}
                   </div>
                   <div>
-                    <p className="font-heading text-xs tracking-widest uppercase mb-4" style={{ color: '#C5A059' }}>Nous sommes :</p>
+                    <p className="font-heading text-xs tracking-widest uppercase mb-4" style={{ color: '#C5A059' }}>{t('about.positioning.isText')}</p>
                     {[
-                      "Le partenaire de l'efficacité directionnelle",
-                      "Le garant de la sérénité des décideurs",
-                      "L'architecte du temps libéré",
+                      t('about.positioning.is.0'),
+                      t('about.positioning.is.1'),
+                      t('about.positioning.is.2')
                     ].map(item => (
                       <div key={item} className="flex items-center gap-3 mb-3">
                         <div className="w-3 h-px" style={{ background: '#C5A059' }} />
@@ -164,9 +176,9 @@ export default function About() {
                   className="mt-6 p-6"
                   style={{ background: isDark ? 'rgba(26,26,26,0.6)' : 'rgba(240,237,232,0.8)', border: '1px solid rgba(197,160,89,0.1)' }}
                 >
-                  <p className="font-body text-xs" style={{ color: 'var(--text-secondary)' }}>Responsable de département de développement statistique de la conciergerie</p>
-                  <p className="font-display text-lg mt-1" style={{ color: '#C5A059' }}>Mme MOUSSOKI MASSAMBA JESSICA DEO-GRACIAS</p>
-                  <p className="font-body text-xs mt-1" style={{ color: 'var(--text-secondary)' }}>Pointe-Noire, République du Congo</p>
+                  <p className="font-body text-xs" style={{ color: 'var(--text-secondary)' }}>{t('about.positioning.signature.role')}</p>
+                  <p className="font-display text-lg mt-1" style={{ color: '#C5A059' }}>{t('about.positioning.signature.name')}</p>
+                  <p className="font-body text-xs mt-1" style={{ color: 'var(--text-secondary)' }}>{t('about.positioning.signature.location')}</p>
                 </div>
               </div>
             </SectionReveal>
@@ -181,8 +193,8 @@ export default function About() {
       <section className="py-32 px-6">
         <div className="max-w-7xl mx-auto">
           <SectionReveal className="text-center mb-20">
-            <p className="section-label mb-4">Ce qui nous guide</p>
-            <h2 className="section-title">Nos <em>Principes Fondateurs</em></h2>
+            <p className="section-label mb-4">{t('about.principles.label')}</p>
+            <h2 className="section-title">{t('about.principles.title')}</h2>
           </SectionReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {principles.map((p, i) => (
@@ -211,17 +223,17 @@ export default function About() {
       <section className="py-24 px-6" style={{ background: isDark ? '#060606' : '#f0ede8' }}>
         <div className="max-w-5xl mx-auto">
           <SectionReveal className="text-center mb-16">
-            <p className="section-label mb-4">Au-Delà des Prestations</p>
-            <h2 className="section-title">Ce que nous <em>vendons vraiment</em></h2>
+            <p className="section-label mb-4">{t('about.offer.label')}</p>
+            <h2 className="section-title">{t('about.offer.title1')} <em>{t('about.offer.title2')}</em></h2>
           </SectionReveal>
           <SectionReveal>
             <div style={{ border: '1px solid rgba(197,160,89,0.15)', overflow: 'hidden' }}>
               {[
-                { offer: 'La Tranquillité', meaning: "L'absence totale de préoccupation logistique" },
-                { offer: "L'Efficacité", meaning: "Chaque minute réinvestie dans l'essentiel" },
-                { offer: 'La Liberté', meaning: "La capacité de se concentrer sans entrave" },
-                { offer: 'La Dignité', meaning: "Un accompagnement discret et irréprochable" },
-                { offer: 'Le Temps', meaning: "La ressource la plus rare et la plus précieuse" },
+                { offer: t('about.offer.items.0.offer'), meaning: t('about.offer.items.0.meaning') },
+                { offer: t('about.offer.items.1.offer'), meaning: t('about.offer.items.1.meaning') },
+                { offer: t('about.offer.items.2.offer'), meaning: t('about.offer.items.2.meaning') },
+                { offer: t('about.offer.items.3.offer'), meaning: t('about.offer.items.3.meaning') },
+                { offer: t('about.offer.items.4.offer'), meaning: t('about.offer.items.4.meaning') },
               ].map((row, i) => (
                 <div
                   key={row.offer}
@@ -254,13 +266,13 @@ export default function About() {
       {/* ═══ CTA ═══ */}
       <section className="py-24 px-6 text-center">
         <SectionReveal>
-          <p className="section-label mb-6">Prêt à franchir le seuil ?</p>
+          <p className="section-label mb-6">{t('about.cta.label')}</p>
           <h2 className="font-display mb-8" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 300 }}>
-            Votre première consultation<br /><em style={{ color: '#C5A059' }}>est offerte.</em>
+            {t('about.cta.title.line1')}<br /><em style={{ color: '#C5A059' }}>{t('about.cta.title.line2')}</em>
           </h2>
           <NavLink to="/contact">
             <motion.button whileHover={{ scale: 1.02 }} className="btn-gold">
-              Prendre Rendez-Vous <ArrowRight size={14} />
+              {t('about.cta.button')} <ArrowRight size={14} />
             </motion.button>
           </NavLink>
         </SectionReveal>

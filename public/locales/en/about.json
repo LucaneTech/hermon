@@ -1,0 +1,145 @@
+{
+  "about": {
+    "hero": {
+      "label": "Who We Are",
+      "title": {
+        "line1": "The",
+        "line2": "Discrete Excellence",
+        "line3": "as a Philosophy"
+      },
+      "description": "HERMON EXIMIA is not a standard concierge service. We are the partner of executive efficiency — the architect of freed time for leaders shaping tomorrow."
+    },
+
+    "story": {
+      "label": "Our Story",
+      "title": {
+        "line1": "Born from a realization,",
+        "line2": "forged by excellence"
+      },
+      "timeline": [
+        {
+          "year": "Genesis",
+          "text": "HERMON EXIMIA was born from a clear observation: the brightest African leaders lose valuable hours on tasks that do not deserve their attention."
+        },
+        {
+          "year": "Vision",
+          "text": "To create the first premium multi-domain concierge service in Congo, capable of rivaling top European standards."
+        },
+        {
+          "year": "Mission",
+          "text": "To free every leader, executive, and talent from anything preventing them from reaching their full potential."
+        },
+        {
+          "year": "Promise",
+          "text": "Each EXIMIA client benefits from a dedicated expert, trained in excellence and available at all times."
+        }
+      ]
+    },
+
+    "positioning": {
+      "label": "Our Positioning",
+      "notText": "We are not:",
+      "isText": "We are:",
+      "not": [
+        "A standard concierge service",
+        "A simple assistance service",
+        "Just another provider"
+      ],
+      "is": [
+        "The partner of executive efficiency",
+        "The guarantor of decision-makers' serenity",
+        "The architect of freed time"
+      ],
+      "signature": {
+        "role": "Head of Statistical Development Department",
+        "name": "Mrs MOUSSOKI MASSAMBA JESSICA DEO-GRACIAS",
+        "location": "Pointe-Noire, Republic of Congo"
+      }
+    },
+    "team": {
+    "header": {
+      "label": "Our Team",
+      "title": {
+        "line1": "Expertise at the service of your",
+        "highlight": "success"
+      },
+      "description": "A committed leadership team united by a shared standard of excellence and discretion."
+    },
+
+    "members": [
+      {
+        "id": 1,
+        "name": "TCHIAMA Paijos Clauva",
+        "role": "General Administrator",
+        "bio": "TCHIAMA Paijos Clauva is a visionary leader with over 15 years of experience in luxury business management. Before founding Hermon Eximia, he successfully led several international companies, bringing unmatched expertise in strategy and operational excellence."
+      },
+      {
+        "id": 2,
+        "name": "Sophie Martin",
+        "role": "Art Director",
+        "bio": "Sophie is a visionary creator with expertise in luxury product design. She worked for prestigious houses before joining Hermon Eximia to lead the brand’s artistic direction."
+      }
+    ]
+  },
+
+    "principles": {
+      "label": "What Guides Us",
+      "title": "Our Founding Principles",
+      "items": [
+        {
+          "title": "Absolute Confidentiality",
+          "desc": "What we know about you stays with us. Reinforced confidentiality clauses in every contract."
+        },
+        {
+          "title": "Permanent Availability",
+          "desc": "Our clients are our priority 24/7/365. There is no such thing as \"off-hours\" for us."
+        },
+        {
+          "title": "Royal Discretion",
+          "desc": "Our work reflects in your peace of mind, never in our presence."
+        },
+        {
+          "title": "Constant Adaptation",
+          "desc": "We evolve with you. Your life changes instantly become our priorities."
+        }
+      ]
+    },
+
+    "offer": {
+      "label": "Beyond Services",
+      "title1": "What We ",
+      "title2": "Truly Sell",
+      "items": [
+        {
+          "offer": "Peace of Mind",
+          "meaning": "Total absence of logistical concerns"
+        },
+        {
+          "offer": "Efficiency",
+          "meaning": "Every minute reinvested in what matters"
+        },
+        {
+          "offer": "Freedom",
+          "meaning": "The ability to focus without constraint"
+        },
+        {
+          "offer": "Dignity",
+          "meaning": "Discreet and flawless support"
+        },
+        {
+          "offer": "Time",
+          "meaning": "The rarest and most valuable resource"
+        }
+      ]
+    },
+
+    "cta": {
+      "label": "Ready to take the next step?",
+      "title": {
+        "line1": "Your first consultation",
+        "line2": "is free."
+      },
+      "button": "Book an Appointment"
+    }
+  }
+}
