@@ -9,22 +9,22 @@ export default function TeamGrid() {
   const { t } = useTranslation('about')
 
   const teamMembers = [
-  {
-    id: t('about.team.members.0.id'),
-    name: t('about.team.members.0.name'),
-    role: t('about.team.members.0.role'),
-    image: 'https://media.istockphoto.com/id/1469156417/fr/photo/un-dirigeant-dentreprise-souriant-dans-la-salle-du-conseil.jpg?s=612x612&w=0&k=20&c=UpFagjmx13LzXK99RCGGcwKYCv44tApMMzgaSnw2Nf0=',
-    bio: t('about.team.members.0.bio')
-  },
-  {
-    id: t('about.team.members.1.id'),
-    name: t('about.team.members.1.name'),
-    role: t('about.team.members.1.role'),
-    image: 'https://media.istockphoto.com/id/1469156417/fr/photo/un-dirigeant-dentreprise-souriant-dans-la-salle-du-conseil.jpg?s=612x612&w=0&k=20&c=UpFagjmx13LzXK99RCGGcwKYCv44tApMMzgaSnw2Nf0=',
-    bio: t('about.team.members.1.bio')
-  },
-  
-]
+    {
+      id: t('about.team.members.0.id'),
+      name: t('about.team.members.0.name'),
+      role: t('about.team.members.0.role'),
+      image: 'images/tchiama.webp',
+      bio: t('about.team.members.0.bio')
+    },
+    {
+      id: t('about.team.members.1.id'),
+      name: t('about.team.members.1.name'),
+      role: t('about.team.members.1.role'),
+      image: 'images/manuela.jpeg',
+      bio: t('about.team.members.1.bio')
+    },
+
+  ]
   return (
     <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8" style={{ background: '#080808' }}>
       <div className="max-w-7xl mx-auto">
@@ -40,6 +40,8 @@ export default function TeamGrid() {
           </p>
         </SectionReveal>
 
+
+
         {/* ─── GRID ───────────────── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {teamMembers.map((member, i) => (
@@ -53,13 +55,14 @@ export default function TeamGrid() {
               >
                 {/* EN-TÊTE CENTRÉ - Nom et Rôle */}
                 <div className="text-center pt-6 pb-4 px-4">
-                  <h3 
+                  <h3
                     className="font-heading text-xs sm:text-sm tracking-widest uppercase mb-2"
                     style={{ color: '#C5A059', fontWeight: 300 }}
                   >
                     {member.name}
                   </h3>
-                  <p 
+
+                  <p
                     className="font-body text-[11px] sm:text-xs"
                     style={{ color: 'var(--text-secondary)' }}
                   >
@@ -67,34 +70,37 @@ export default function TeamGrid() {
                   </p>
                 </div>
 
+
                 {/* IMAGE */}
-                <div className="relative aspect-[4/3] sm:aspect-[4/3] md:aspect-[3/4] lg:aspect-[4/3] overflow-hidden bg-gray-900 mx-2">
+                <div className="relative aspect-[4/3] sm:aspect-[4/3] md:aspect-[3/4] lg:aspect-[4/3] overflow-hidden bg-gold-light/90 mx-2">
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-contain transition-transform duration-500 hover:scale-105 cursor-pointer"
                     loading="lazy"
                   />
                 </div>
+
 
                 {/* DESCRIPTION AVEC QUOTE */}
                 <div className="flex flex-col flex-grow p-5 sm:p-6">
                   <div className="flex justify-center mb-3">
                     <Quote size={14} className="text-yellow-400/70" />
                   </div>
-                  <p 
+                  <p
                     className="font-body text-xs sm:text-sm leading-relaxed text-center"
                     style={{ color: 'var(--text-secondary)' }}
                   >
                     {member.bio}
                   </p>
                 </div>
+
               </div>
             </SectionReveal>
           ))}
         </div>
 
-       
+
       </div>
     </section>
   )
