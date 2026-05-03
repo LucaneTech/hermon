@@ -23,6 +23,13 @@ export default function TeamGrid() {
       image: 'images/manuela.jpeg',
       bio: t('about.team.members.1.bio')
     },
+    {
+      id: t('about.team.members.2.id'),
+      name: t('about.team.members.2.name'),
+      role: t('about.team.members.2.role'),
+      image: 'images/jessica.jpeg',
+      bio: t('about.team.members.2.bio')
+    },
 
   ]
   return (
@@ -72,15 +79,29 @@ export default function TeamGrid() {
 
 
                 {/* IMAGE */}
-                <div className="relative aspect-[4/3] sm:aspect-[4/3] md:aspect-[3/4] lg:aspect-[4/3] overflow-hidden bg-gold-light/90 mx-2">
+                <div className="relative aspect-[4/3] sm:aspect-[4/3] md:aspect-[3/4] lg:aspect-[4/3] overflow-hidden mx-2 rounded-sm group">
+
+                  {/* Background premium gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-gold-light/60 via-white/30 to-gold/20 backdrop-blur-sm" />
+
+                  {/* Soft glow effect */}
+                  <div className="absolute -inset-10 bg-gold/10 blur-3xl opacity-60 group-hover:opacity-80 transition duration-500" />
+
+                  {/* Subtle noise / texture overlay (optionnel mais très premium) */}
+                  <div className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(circle,_#000_1px,_transparent_1px)] bg-[length:12px_12px]" />
+
+                  {/* Image */}
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-contain transition-transform duration-500 hover:scale-105 cursor-pointer"
+                    className="relative z-10 w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 cursor-pointer drop-shadow-xl"
                     loading="lazy"
                   />
-                </div>
 
+                  {/* Inner border glow */}
+                  <div className="absolute inset-0 ring-1 ring-gold/20 rounded-2xl pointer-events-none" />
+
+                </div>
 
                 {/* DESCRIPTION AVEC QUOTE */}
                 <div className="flex flex-col flex-grow p-5 sm:p-6">

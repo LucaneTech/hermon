@@ -63,23 +63,27 @@
         },
         "description": "Une équipe dirigeante engagée, unie par une même exigence d'excellence et de discrétion."
       },
-
       "members": [
         {
           "id": 1,
           "name": "TCHIAMA Paijos Clauva",
           "role": "Administrateur Général",
-          "bio": "TCHIAMA Paijos Clauva est un leader visionnaire avec plus de 15 ans d'expérience dans la gestion d'entreprises de luxe. Avant de fonder Hermon Eximia, il a dirigé avec succès plusieurs entreprises internationales, apportant une expertise inégalée en stratégie et en excellence opérationnelle."
+          "bio": "Administrateur Général de HERMON EXIMIA, je porte une vision où le temps devient une arme souveraine et un actif stratégique absolu. Dans un monde dominé par le chaos et la complexité, nous ne fournissons pas de services : nous sculptons la sérénité impériale pour une élite qui maîtrise le temps comme levier de puissance.HERMON EXIMIA érige une citadelle cognitive au service des leaders africains et internationaux, en transformant l’incertitude en anticipation stratégique. Notre intelligence concierge fonctionne comme une capacité prédictive avancée, capable d’anticiper les dynamiques critiques avant leur manifestation.Notre mécanique repose sur trois piliers fondamentaux : une architecture expérientielle fractale qui relie micro et macro-exécution dans une cohérence parfaite, une intelligence comportementale capable de décrypter les signaux invisibles du pouvoir, et une géométrie de la discrétion garantissant une sécurité absolue de l’information. L’impact est concret et immédiat : nous neutralisons les contraintes opérationnelles les plus complexes, du transport d’urgence à l’organisation d’événements d’État, afin de libérer la pleine capacité stratégique des décideurs. HERMON EXIMIA agit ainsi comme une extension cognitive de l’élite, dédiée à la performance, à la maîtrise et à une vision d’une Afrique triomphante."
         },
         {
           "id": 2,
           "name": "FERNANDES Peters Ketsia Manuella",
           "role": "Directrice des Opérations et des Projets",
           "bio": "Spécialiste en gestion de projets et en optimisation opérationnelle, elle assure la coordination et l'efficacité des interventions du cabinet. Son approche : rigueur méthodologique et agilité."
+        },
+        {
+          "id": 3,
+          "name": "MOUSSOKI MASSAMBA JESSICA DEO-GRACIAS",
+          "role": "Responsable de la Conciergerie Premium",
+          "bio": "En tant que Responsable de la Conciergerie Premium chez Hermon Eximia, ma mission est d’offrir une expérience unique, pensée pour répondre avec élégance, discrétion et efficacité aux besoins de notre clientèle.Nous transformons chaque demande en une solution sur mesure, en mettant l’excellence du service, le sens du détail et la satisfaction client au cœur de notre engagement. De l’assistance personnalisée à la coordination de prestations exclusives, notre conciergerie premium incarne un art du service raffiné, professionnel et humain.Chez Hermon Eximia, nous croyons que le véritable luxe réside dans la qualité de l’accompagnement, la disponibilité et la capacité à anticiper les attentes les plus exigeantes. Notre priorité est de simplifier le quotidien de nos clients tout en leur offrant confort, sérénité et  prestige.Hermon Eximia — L’excellence au service de vos exigences."
         }
       ]
     },
-
     "principles": {
       "label": "Ce qui nous guide",
       "title": "Nos Principes Fondateurs",

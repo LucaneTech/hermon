@@ -57,30 +57,35 @@
       }
     },
     "team": {
-    "header": {
-      "label": "Our Team",
-      "title": {
-        "line1": "Expertise at the service of your",
-        "highlight": "success"
-      },
-      "description": "A committed leadership team united by a shared standard of excellence and discretion."
+  "header": {
+    "label": "Our Team",
+    "title": {
+      "line1": "Expertise at the service of your",
+      "highlight": "success"
     },
-
-    "members": [
-      {
-        "id": 1,
-        "name": "TCHIAMA Paijos Clauva",
-        "role": "General Administrator",
-        "bio": "TCHIAMA Paijos Clauva is a visionary leader with over 15 years of experience in luxury business management. Before founding Hermon Eximia, he successfully led several international companies, bringing unmatched expertise in strategy and operational excellence."
-      },
-      {
-        "id": 2,
-        "name": "Sophie Martin",
-        "role": "Art Director",
-        "bio": "Sophie is a visionary creator with expertise in luxury product design. She worked for prestigious houses before joining Hermon Eximia to lead the brand’s artistic direction."
-      }
-    ]
+    "description": "A committed executive team, united by the same standard of excellence and discretion."
   },
+  "members": [
+    {
+      "id": 1,
+      "name": "TCHIAMA Paijos Clauva",
+      "role": "Chief Executive Administrator",
+      "bio": "As Chief Executive Administrator of HERMON EXIMIA, I carry a vision where time becomes a sovereign weapon and an absolute strategic asset. In a world dominated by chaos and complexity, we do not provide services: we sculpt imperial serenity for an elite that masters time as a lever of power. HERMON EXIMIA builds a cognitive citadel serving African and international leaders by transforming uncertainty into strategic anticipation. Our concierge intelligence operates as an advanced predictive capability, able to foresee critical dynamics before they emerge. Our framework is built on three fundamental pillars: a fractal experiential architecture that connects micro and macro execution in perfect coherence, behavioral intelligence capable of decoding invisible signals of power, and a geometry of discretion ensuring absolute information security. The impact is concrete and immediate: we neutralize the most complex operational constraints, from emergency transport to state event coordination, in order to fully unlock the strategic capacity of decision-makers. HERMON EXIMIA thus acts as a cognitive extension of the elite, dedicated to performance, mastery, and a vision of a triumphant Africa."
+    },
+    {
+      "id": 2,
+      "name": "FERNANDES Peters Ketsia Manuella",
+      "role": "Director of Operations and Projects",
+      "bio": "A specialist in project management and operational optimization, she ensures the coordination and efficiency of the firm’s activities. Her approach combines methodological rigor with agility."
+    },
+    {
+      "id": 3,
+      "name": "MOUSSOKI MASSAMBA JESSICA DEO-GRACIAS",
+      "role": "Head of Premium Concierge Services",
+      "bio": "As Head of Premium Concierge Services at Hermon Eximia, my mission is to deliver a unique experience designed to respond with elegance, discretion, and efficiency to our clients’ needs. We transform every request into a tailor-made solution, placing service excellence, attention to detail, and client satisfaction at the core of our commitment. From personalized assistance to the coordination of exclusive services, our premium concierge embodies a refined, professional, and human-centered art of service. At Hermon Eximia, we believe that true luxury lies in the quality of support, constant availability, and the ability to anticipate the most demanding expectations. Our priority is to simplify our clients’ daily lives while offering comfort, serenity, and prestige. Hermon Eximia — Excellence at the service of your demands."
+    }
+  ]
+},
 
     "principles": {
       "label": "What Guides Us",
