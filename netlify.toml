@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  VITE_EMAILJS_SERVICE_ID = "service_twygsiu"
+  VITE_EMAILJS_TEMPLATE_ID = "template_91lgxv8"
+  VITE_EMAILJS_PUBLIC_KEY = "HPFhzz0G90X4in_-n"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
